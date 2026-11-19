@@ -1,0 +1,71 @@
+name: Build CDN (prebuilt native)
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - name: Checkout overlay repo
+        uses: actions/checkout@v4
+        with:
+          path: ov
+
+      - name: Checkout upstream Nagram 1258
+        uses: actions/checkout@v4
+        with:
+          repository: NextAlone/Nagram
+          ref: '1258'
+          path: src
+
+      - name: Fetch only the two Java-side submodules
+        working-directory: src
+        run: |
+          git submodule update --init --depth 1 TMessagesProj_Modules/media
+          git submodule update --init --depth 1 TMessagesProj/lib/jlatexmath
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Apply overlay
+        run: cp -a ov/overlay/. src/
+
+      - name: Install SDK packages
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null 2>&1 || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-36" "build-tools;36.0.0" "build-tools;35.0.0" > /dev/null
+
+      - name: Seed prebuilt native libs
+        run: |
+          curl -sSL -o /tmp/official.apk "https://github.com/NextAlone/Nagram/releases/download/1258/Nagram-v13.1.1.1258-arm64-v8a.apk"
+          rm -rf /tmp/so && mkdir -p /tmp/so
+          unzip -o -q /tmp/official.apk 'lib/arm64-v8a/*' -d /tmp/so
+          mkdir -p src/TMessagesProj/src/main/jniLibs/arm64-v8a
+          cp /tmp/so/lib/arm64-v8a/*.so src/TMessagesProj/src/main/jniLibs/arm64-v8a/
+          ls -la src/TMessagesProj/src/main/jniLibs/arm64-v8a/
+
+      - name: Build release
+        working-directory: src
+        env:
+          NATIVE_TARGET: arm64-v8a
+        run: |
+          printf 'sdk.dir=%s\nKEYSTORE_PASS=android\nALIAS_NAME=androidkey\nALIAS_PASS=android\n' "$ANDROID_HOME" > local.properties
+          ./gradlew :TMessagesProj:assembleRelease \
+            -PusePrebuiltNative \
+            -PnagramKeystore=nagram-ci.keystore \
+            --no-parallel \
+            -x lintVitalRelease -x lintVitalAnalyzeRelease -x lintRelease -x lintAnalyzeRelease \
+            -Dorg.gradle.jvmargs="-Xmx6g -XX:MaxMetaspaceSize=1g"
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: nagram-cdn-prebuilt
+          path: src/TMessagesProj/build/outputs/apk/release/*.apk
+          if-no-files-found: error

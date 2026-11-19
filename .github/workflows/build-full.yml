@@ -1,0 +1,59 @@
+name: Build CDN (full native)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      CCACHE_COMPILERCHECK: "%compiler% -dumpmachine; %compiler% -dumpversion"
+      CCACHE_NOHASHDIR: "true"
+      CCACHE_MAXSIZE: "3G"
+    steps:
+      - name: Checkout overlay repo
+        uses: actions/checkout@v4
+        with:
+          path: ov
+
+      - name: Checkout upstream Nagram 1258 (all submodules)
+        uses: actions/checkout@v4
+        with:
+          repository: NextAlone/Nagram
+          ref: '1258'
+          submodules: recursive
+          fetch-depth: 1
+          path: src
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Apply overlay
+        run: cp -a ov/overlay/. src/
+
+      - name: Install SDK packages
+        run: |
+          yes | "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" --licenses > /dev/null 2>&1 || true
+          "$ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager" "platforms;android-36" "build-tools;36.0.0" "build-tools;35.0.0" "cmake;3.22.1" "ndk;27.2.12479018" > /dev/null
+
+      - name: Build release
+        working-directory: src
+        env:
+          NATIVE_TARGET: arm64-v8a
+        run: |
+          printf 'sdk.dir=%s\nndk.dir=%s\nKEYSTORE_PASS=android\nALIAS_NAME=androidkey\nALIAS_PASS=android\n' "$ANDROID_HOME" "$ANDROID_HOME/ndk/27.2.12479018" > local.properties
+          ./gradlew :TMessagesProj:assembleRelease \
+            -PnagramKeystore=nagram-ci.keystore \
+            --no-parallel \
+            -x lintVitalRelease -x lintVitalAnalyzeRelease -x lintRelease -x lintAnalyzeRelease \
+            -Dorg.gradle.jvmargs="-Xmx6g -XX:MaxMetaspaceSize=1g"
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: nagram-cdn-full
+          path: src/TMessagesProj/build/outputs/apk/release/*.apk
+          if-no-files-found: error

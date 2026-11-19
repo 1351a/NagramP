@@ -23,7 +23,9 @@ import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
 import java.security.SecureRandom;
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import javax.net.ssl.SNIHostName;
 import javax.net.ssl.SSLContext;
@@ -42,7 +44,7 @@ import javax.net.ssl.SSLSocketFactory;
 final class VlessTunnel implements Closeable {
 
     private static final String TAG = "NagramVLESS";
-    private static final int CONNECT_TIMEOUT_MS = 12000;
+    private static final int CONNECT_TIMEOUT_MS = 8000;
     private static final int WRITE_CHUNK = 32 * 1024;
     private static final int MAX_MESSAGE = 4 * 1024 * 1024;
     private static final int MAX_HANDSHAKE_HEAD = 8192;
@@ -74,10 +76,9 @@ final class VlessTunnel implements Closeable {
     }
 
     static VlessTunnel open(VlessProfile profile, String dstHost, int dstPort) throws IOException {
-        Socket plain = new Socket();
+        Socket plain = null;
         try {
-            plain.setTcpNoDelay(true);
-            connectAny(plain, profile.address, profile.port);
+            plain = connectFirst(profile.address, profile.port);
 
             Socket transport = plain;
             if (profile.tls) {
@@ -374,42 +375,42 @@ final class VlessTunnel implements Closeable {
         }
     }
 
-    /** Tries every resolved address (IPv4 first); a single poisoned IP must not kill the tunnel. */
-    private static void connectAny(Socket socket, String host, int port) throws IOException {
+    /**
+     * Connects using a fresh socket per address, IPv4 first.
+     *
+     * A timed-out connect leaves the socket unusable, so addresses must never share one.
+     */
+    private static Socket connectFirst(String host, int port) throws IOException {
         InetAddress[] all = InetAddress.getAllByName(host);
         if (all == null || all.length == 0) {
             throw new IOException("cannot resolve " + host);
         }
-        IOException last = null;
+        List<InetAddress> order = new ArrayList<>();
         for (InetAddress address : all) {
+            if (address instanceof Inet4Address) {
+                order.add(address);
+            }
+        }
+        for (InetAddress address : all) {
+            if (!(address instanceof Inet4Address)) {
+                order.add(address);
+            }
+        }
+        IOException last = null;
+        for (InetAddress address : order) {
+            Socket socket = new Socket();
             try {
+                socket.setTcpNoDelay(true);
                 socket.connect(new InetSocketAddress(address, port), CONNECT_TIMEOUT_MS);
                 Log.d(TAG, "connected " + address.getHostAddress() + ":" + port);
-                return;
+                return socket;
             } catch (IOException e) {
                 last = e;
                 Log.w(TAG, "connect failed " + address.getHostAddress() + ":" + port + " " + e.getMessage());
+                closeQuietly(socket);
             }
         }
-        throw last != null ? last : new IOException("connect failed");
-    }
-
-    private static InetAddress resolve(String host) throws IOException {
-        InetAddress[] all = InetAddress.getAllByName(host);
-        if (all.length == 0) {
-            throw new IOException("cannot resolve " + host);
-        }
-        for (InetAddress address : all) {
-            if (address instanceof Inet4Address) {
-                return address;
-            }
-        }
-        for (InetAddress address : all) {
-            if (address instanceof Inet6Address) {
-                return address;
-            }
-        }
-        return all[0];
+        throw last != null ? last : new IOException("no address for " + host);
     }
 
     private static byte[] parseIpv4(String host) {

@@ -44,6 +44,9 @@ public final class VlessSubscriptionClient {
     // client agents; we need the latter.
     private static final String USER_AGENT = "v2rayNG/1.8.5";
 
+    /** Nodes known to resolve to real Cloudflare edges on the target network, in preference order. */
+    private static final String[] PREFERRED_HOSTS = {"time.is", "www.gov.se", "icook.hk", "japan.com"};
+
     /** Last-resort node so the channel still works before the first refresh succeeds. */
     private static final VlessProfile BUILT_IN = new VlessProfile(
             "time.is", "time.is", 443,
@@ -165,48 +168,62 @@ public final class VlessSubscriptionClient {
      */
     private static VlessProfile parseNodes(String text) {
         java.util.List<VlessProfile> all = new java.util.ArrayList<>();
-        VlessProfile targetPort443 = null;
-        VlessProfile anyPort443 = null;
-        VlessProfile targetAnyPort = null;
         for (String line : text.split("[\\r\\n]+")) {
             String link = line.trim();
             if (link.isEmpty() || !link.regionMatches(true, 0, "vless://", 0, 8)) {
                 continue;
             }
             VlessProfile profile = VlessProfile.parse(link);
-            if (profile == null) {
+            if (profile == null || !isUsableHost(profile.address)) {
                 continue;
             }
             all.add(profile);
-            String label = profile.label.toLowerCase(Locale.US);
-            String address = profile.address.toLowerCase(Locale.US);
-            boolean isTarget = TARGET_LABEL.equals(label) || TARGET_LABEL.equals(address)
-                    || address.contains(TARGET_LABEL);
-            if (profile.port == 443) {
-                if (isTarget && targetPort443 == null) {
-                    targetPort443 = profile;
-                }
-                if (anyPort443 == null) {
-                    anyPort443 = profile;
-                }
-            } else if (isTarget && targetAnyPort == null) {
-                targetAnyPort = profile;
-            }
         }
         StringBuilder log = new StringBuilder("nodes=").append(all.size());
         for (VlessProfile p : all) {
             log.append(' ').append(p.address).append(':').append(p.port);
         }
         Log.d(TAG, log.toString());
-        if (targetPort443 != null) {
-            return targetPort443;
+
+        // 1) whitelisted host on 443, in preference order
+        for (String preferred : PREFERRED_HOSTS) {
+            for (VlessProfile p : all) {
+                if (p.port == 443 && preferred.equalsIgnoreCase(p.address)) {
+                    return p;
+                }
+            }
         }
-        if (anyPort443 != null) {
-            return anyPort443;
+        // 2) whitelisted host on any port
+        for (String preferred : PREFERRED_HOSTS) {
+            for (VlessProfile p : all) {
+                if (preferred.equalsIgnoreCase(p.address)) {
+                    return p;
+                }
+            }
         }
-        if (targetAnyPort != null) {
-            return targetAnyPort;
+        // 3) any usable 443 node
+        for (VlessProfile p : all) {
+            if (p.port == 443) {
+                return p;
+            }
         }
         return all.isEmpty() ? null : all.get(0);
+    }
+
+    /** Filters out entries whose "address" is a loopback, IP literal or carrier ad placeholder. */
+    private static boolean isUsableHost(String address) {
+        if (TextUtils.isEmpty(address)) {
+            return false;
+        }
+        String host = address.toLowerCase(Locale.US);
+        if (host.startsWith("127.") || "localhost".equals(host) || "::1".equals(host) || "[::1]".equals(host)) {
+            return false;
+        }
+        if (host.contains("t.me") || host.contains("telegram") || host.contains("cmliussss")) {
+            return false;
+        }
+        // require a normal DNS name with a TLD-ish tail
+        int dot = host.lastIndexOf('.');
+        return dot > 0 && dot < host.length() - 1 && host.indexOf(':') < 0;
     }
 }

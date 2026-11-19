@@ -44,7 +44,8 @@ import javax.net.ssl.SSLSocketFactory;
 final class VlessTunnel implements Closeable {
 
     private static final String TAG = "NagramVLESS";
-    private static final int CONNECT_TIMEOUT_MS = 8000;
+    private static final int CONNECT_TIMEOUT_MS = 5000;
+    private static final int MAX_CONNECT_ADDRESSES = 3;
     private static final int WRITE_CHUNK = 32 * 1024;
     private static final int MAX_MESSAGE = 4 * 1024 * 1024;
     private static final int MAX_HANDSHAKE_HEAD = 8192;
@@ -397,7 +398,11 @@ final class VlessTunnel implements Closeable {
             }
         }
         IOException last = null;
+        int attempts = 0;
         for (InetAddress address : order) {
+            if (attempts++ >= MAX_CONNECT_ADDRESSES) {
+                break;
+            }
             Socket socket = new Socket();
             try {
                 socket.setTcpNoDelay(true);

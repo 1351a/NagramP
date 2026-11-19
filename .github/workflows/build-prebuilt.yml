@@ -5,6 +5,9 @@ on:
   push:
     branches: [ main ]
 
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -69,3 +72,20 @@ jobs:
           name: nagram-cdn-prebuilt
           path: src/TMessagesProj/build/outputs/apk/release/*.apk
           if-no-files-found: error
+
+      - name: Publish APK to artifacts branch
+        env:
+          TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -e
+          rm -rf /tmp/out && mkdir -p /tmp/out
+          cp src/TMessagesProj/build/outputs/apk/release/*.apk /tmp/out/
+          cp src/TMessagesProj/build/outputs/logs/* /tmp/out/ 2>/dev/null || true
+          cd /tmp/out
+          ls -la
+          git init -q -b artifacts
+          git config user.email "ci@nagramp.local"
+          git config user.name "ci"
+          git add -A
+          git commit -q -m "build $(date -u +%Y%m%d-%H%M%S)"
+          git push -f "https://x-access-token:${TOKEN}@github.com/${GITHUB_REPOSITORY}.git" artifacts

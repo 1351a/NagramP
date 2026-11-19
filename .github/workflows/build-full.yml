@@ -2,6 +2,10 @@ name: Build CDN (full native)
 
 on:
   workflow_dispatch:
+  push:
+    branches: [ main ]
+    paths:
+      - 'overlay/TMessagesProj/jni/**'
 
 jobs:
   build:

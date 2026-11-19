@@ -5,6 +5,8 @@
 
 package org.telegram.utils.proxy.vless;
 
+import android.util.Log;
+
 import org.telegram.messenger.FileLog;
 
 import java.io.Closeable;
@@ -34,6 +36,7 @@ public final class VlessGateway {
 
     public static final int DEFAULT_PORT = 10808;
 
+    private static final String TAG = "NagramVLESS";
     private static final int MAX_CONNECTIONS = 96;
     private static final int REPLY_GENERAL_FAILURE = 0x01;
     private static final int REPLY_HOST_UNREACHABLE = 0x04;
@@ -163,8 +166,10 @@ public final class VlessGateway {
             pump(client, tunnel);
         } catch (IOException e) {
             FileLog.d("vless: tunnel failed: " + e.getMessage());
+            Log.e(TAG, "tunnel failed", e);
         } catch (Throwable e) {
             FileLog.e("vless: tunnel crashed", e);
+            Log.e(TAG, "tunnel crashed", e);
         } finally {
             if (tunnel != null) {
                 tunnel.close();

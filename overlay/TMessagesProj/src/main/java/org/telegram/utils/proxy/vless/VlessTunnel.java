@@ -6,6 +6,7 @@
 package org.telegram.utils.proxy.vless;
 
 import android.os.Build;
+import android.util.Log;
 import android.util.Base64;
 
 import java.io.BufferedInputStream;
@@ -40,6 +41,7 @@ import javax.net.ssl.SSLSocketFactory;
  */
 final class VlessTunnel implements Closeable {
 
+    private static final String TAG = "NagramVLESS";
     private static final int CONNECT_TIMEOUT_MS = 12000;
     private static final int WRITE_CHUNK = 32 * 1024;
     private static final int MAX_MESSAGE = 4 * 1024 * 1024;
@@ -75,7 +77,7 @@ final class VlessTunnel implements Closeable {
         Socket plain = new Socket();
         try {
             plain.setTcpNoDelay(true);
-            plain.connect(new InetSocketAddress(resolve(profile.address), profile.port), CONNECT_TIMEOUT_MS);
+            connectAny(plain, profile.address, profile.port);
 
             Socket transport = plain;
             if (profile.tls) {
@@ -93,7 +95,12 @@ final class VlessTunnel implements Closeable {
                 }
                 tls.setSSLParameters(params);
                 tls.setSoTimeout(CONNECT_TIMEOUT_MS);
+                Log.d(TAG, "tls handshake to " + profile.address + ":" + profile.port
+                        + " sni=" + profile.sni + " target=" + dstHost + ":" + dstPort);
                 tls.startHandshake();
+                Log.d(TAG, "tls ok proto=" + tls.getSession().getProtocol()
+                        + " cipher=" + tls.getSession().getCipherSuite()
+                        + " alpn=" + tls.getApplicationProtocol());
                 transport = tls;
             }
 
@@ -142,8 +149,10 @@ final class VlessTunnel implements Closeable {
                 throw new IOException("ws handshake too long");
             }
         }
+        Log.d(TAG, "ws request path=" + profile.wsPath + " host=" + profile.wsHost);
         int eol = head.indexOf("\r\n");
         String status = eol > 0 ? head.substring(0, eol) : head.toString();
+        Log.d(TAG, "ws status: " + status);
         if (!status.contains(" 101 ")) {
             throw new IOException("ws upgrade rejected: " + status);
         }
@@ -363,6 +372,26 @@ final class VlessTunnel implements Closeable {
             } catch (Exception ignore) {
             }
         }
+    }
+
+    /** Tries every resolved address (IPv4 first); a single poisoned IP must not kill the tunnel. */
+    private static void connectAny(Socket socket, String host, int port) throws IOException {
+        InetAddress[] all = InetAddress.getAllByName(host);
+        if (all == null || all.length == 0) {
+            throw new IOException("cannot resolve " + host);
+        }
+        IOException last = null;
+        for (InetAddress address : all) {
+            try {
+                socket.connect(new InetSocketAddress(address, port), CONNECT_TIMEOUT_MS);
+                Log.d(TAG, "connected " + address.getHostAddress() + ":" + port);
+                return;
+            } catch (IOException e) {
+                last = e;
+                Log.w(TAG, "connect failed " + address.getHostAddress() + ":" + port + " " + e.getMessage());
+            }
+        }
+        throw last != null ? last : new IOException("connect failed");
     }
 
     private static InetAddress resolve(String host) throws IOException {

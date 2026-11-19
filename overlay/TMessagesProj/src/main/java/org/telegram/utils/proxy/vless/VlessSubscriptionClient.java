@@ -40,9 +40,15 @@ public final class VlessSubscriptionClient {
     private static final String PREF_KEY = "cdn_vless_profile";
     private static final String TAG = "NagramCDN";
     private static final int MAX_BYTES = 256 * 1024;
-    private static final String USER_AGENT =
-            "Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) "
-                    + "Chrome/120.0.0.0 Mobile Safari/537.36";
+    // The subscription serves a Clash YAML to browser agents and a base64 vless list to
+    // client agents; we need the latter.
+    private static final String USER_AGENT = "v2rayNG/1.8.5";
+
+    /** Last-resort node so the channel still works before the first refresh succeeds. */
+    private static final VlessProfile BUILT_IN = new VlessProfile(
+            TARGET_LABEL, "japan.com", 2053,
+            "d19a38ec-8add-47d7-b45a-7a07b248e4bb",
+            "vless1.130chang.eu.org", "vless1.130chang.eu.org", "/?ed=2560", true);
 
     private VlessSubscriptionClient() {
     }
@@ -53,9 +59,10 @@ public final class VlessSubscriptionClient {
 
     public static VlessProfile loadCached() {
         try {
-            return VlessProfile.fromJson(prefs().getString(PREF_KEY, null));
+            VlessProfile cached = VlessProfile.fromJson(prefs().getString(PREF_KEY, null));
+            return cached != null ? cached : BUILT_IN;
         } catch (Throwable e) {
-            return null;
+            return BUILT_IN;
         }
     }
 

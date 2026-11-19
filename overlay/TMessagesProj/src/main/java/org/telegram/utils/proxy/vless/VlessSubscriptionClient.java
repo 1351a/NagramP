@@ -46,7 +46,7 @@ public final class VlessSubscriptionClient {
 
     /** Last-resort node so the channel still works before the first refresh succeeds. */
     private static final VlessProfile BUILT_IN = new VlessProfile(
-            TARGET_LABEL, "japan.com", 2053,
+            "time.is", "time.is", 443,
             "d19a38ec-8add-47d7-b45a-7a07b248e4bb",
             "vless1.130chang.eu.org", "vless1.130chang.eu.org", "/?ed=2560", true);
 
@@ -156,9 +156,18 @@ public final class VlessSubscriptionClient {
         return body;
     }
 
+    /**
+     * Picks the best node from the subscription.
+     *
+     * Port 443 matters more than the label here: carriers routinely reset TLS on non-standard
+     * ports, so a 2053 node fails to handshake on many networks while the same subscription's
+     * 443 nodes work. Preference order: 443 + target label, any 443 node, target label, first.
+     */
     private static VlessProfile parseNodes(String text) {
-        VlessProfile byAddress = null;
-        VlessProfile byLooseLabel = null;
+        java.util.List<VlessProfile> all = new java.util.ArrayList<>();
+        VlessProfile targetPort443 = null;
+        VlessProfile anyPort443 = null;
+        VlessProfile targetAnyPort = null;
         for (String line : text.split("[\\r\\n]+")) {
             String link = line.trim();
             if (link.isEmpty() || !link.regionMatches(true, 0, "vless://", 0, 8)) {
@@ -168,18 +177,36 @@ public final class VlessSubscriptionClient {
             if (profile == null) {
                 continue;
             }
+            all.add(profile);
             String label = profile.label.toLowerCase(Locale.US);
             String address = profile.address.toLowerCase(Locale.US);
-            if (TARGET_LABEL.equals(label) || TARGET_LABEL.equals(address)) {
-                return profile;
-            }
-            if (byAddress == null && address.contains(TARGET_LABEL)) {
-                byAddress = profile;
-            }
-            if (byLooseLabel == null && label.contains(TARGET_LABEL)) {
-                byLooseLabel = profile;
+            boolean isTarget = TARGET_LABEL.equals(label) || TARGET_LABEL.equals(address)
+                    || address.contains(TARGET_LABEL);
+            if (profile.port == 443) {
+                if (isTarget && targetPort443 == null) {
+                    targetPort443 = profile;
+                }
+                if (anyPort443 == null) {
+                    anyPort443 = profile;
+                }
+            } else if (isTarget && targetAnyPort == null) {
+                targetAnyPort = profile;
             }
         }
-        return byAddress != null ? byAddress : byLooseLabel;
+        StringBuilder log = new StringBuilder("nodes=").append(all.size());
+        for (VlessProfile p : all) {
+            log.append(' ').append(p.address).append(':').append(p.port);
+        }
+        Log.d(TAG, log.toString());
+        if (targetPort443 != null) {
+            return targetPort443;
+        }
+        if (anyPort443 != null) {
+            return anyPort443;
+        }
+        if (targetAnyPort != null) {
+            return targetAnyPort;
+        }
+        return all.isEmpty() ? null : all.get(0);
     }
 }

@@ -51,18 +51,7 @@ jobs:
           unzip -o -q /tmp/official.apk 'lib/arm64-v8a/*' -d /tmp/so
           mkdir -p src/TMessagesProj/src/main/jniLibs/arm64-v8a
           cp /tmp/so/lib/arm64-v8a/*.so src/TMessagesProj/src/main/jniLibs/arm64-v8a/
-          # The prebuilt lib hard-codes the upstream signing SHA1 and returns JNI_ERR otherwise.
-          python3 - <<'PYEOF'
-          import glob
-          old = b"3A0F57FE06485D0B90D0ACD990E3A30328E3988D"
-          new = b"9A82879F1F55784885C82450BE629BD54A204A4D"
-          for f in glob.glob("src/TMessagesProj/src/main/jniLibs/arm64-v8a/libtmessages.*.so"):
-              d = open(f, "rb").read()
-              n = d.count(old)
-              if n:
-                  open(f, "wb").write(d.replace(old, new))
-              print(f, "patched", n)
-          PYEOF
+          python3 ov/scripts/patch-sign.py src/TMessagesProj/src/main/jniLibs/arm64-v8a
           ls -la src/TMessagesProj/src/main/jniLibs/arm64-v8a/
 
       - name: Build release

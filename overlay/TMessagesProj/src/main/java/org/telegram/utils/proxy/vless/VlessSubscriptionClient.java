@@ -8,6 +8,7 @@ package org.telegram.utils.proxy.vless;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.text.TextUtils;
+import android.util.Log;
 import android.util.Base64;
 
 import org.telegram.messenger.ApplicationLoader;
@@ -37,6 +38,7 @@ public final class VlessSubscriptionClient {
     public static final String TARGET_LABEL = "japan.com";
 
     private static final String PREF_KEY = "cdn_vless_profile";
+    private static final String TAG = "NagramCDN";
     private static final int MAX_BYTES = 256 * 1024;
     private static final String USER_AGENT =
             "Mozilla/5.0 (Linux; Android 14) AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -73,7 +75,11 @@ public final class VlessSubscriptionClient {
         VlessProfile cached = loadCached();
         try {
             String body = download();
-            VlessProfile parsed = parseNodes(decode(body));
+            Log.d(TAG, "subscription body len=" + (body == null ? -1 : body.length()));
+            String decoded = decode(body);
+            Log.d(TAG, "decoded len=" + decoded.length() + " hasVless=" + decoded.contains("vless://"));
+            VlessProfile parsed = parseNodes(decoded);
+            Log.d(TAG, "picked=" + parsed);
             if (parsed != null) {
                 saveCached(parsed);
                 return parsed;
@@ -81,6 +87,7 @@ public final class VlessSubscriptionClient {
             FileLog.d("vless: subscription has no matching node");
         } catch (Throwable e) {
             FileLog.d("vless: subscription refresh failed: " + e.getMessage());
+            Log.e(TAG, "subscription refresh failed", e);
         }
         return cached;
     }
@@ -96,6 +103,7 @@ public final class VlessSubscriptionClient {
         connection.setInstanceFollowRedirects(true);
         try {
             int code = connection.getResponseCode();
+            Log.d(TAG, "subscription HTTP " + code);
             if (code < 200 || code >= 300) {
                 throw new IOException("HTTP " + code);
             }

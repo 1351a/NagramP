@@ -59,28 +59,31 @@ jobs:
           NATIVE_TARGET: arm64-v8a
         run: |
           printf 'sdk.dir=%s\nKEYSTORE_PASS=android\nALIAS_NAME=androidkey\nALIAS_PASS=android\n' "$ANDROID_HOME" > local.properties
+          set -o pipefail
           ./gradlew :TMessagesProj:assembleRelease \
             -PusePrebuiltNative \
             -PnagramKeystore=nagram-ci.keystore \
             --no-parallel \
             -x lintVitalRelease -x lintVitalAnalyzeRelease -x lintRelease -x lintAnalyzeRelease \
-            -Dorg.gradle.jvmargs="-Xmx6g -XX:MaxMetaspaceSize=1g"
+            -Dorg.gradle.jvmargs="-Xmx6g -XX:MaxMetaspaceSize=1g" 2>&1 | tee /tmp/build.log
 
       - name: Upload APK
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: nagram-cdn-prebuilt
           path: src/TMessagesProj/build/outputs/apk/release/*.apk
-          if-no-files-found: error
+          if-no-files-found: warn
 
-      - name: Publish APK to artifacts branch
+      - name: Publish results to artifacts branch
+        if: always()
         env:
           TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set -e
           rm -rf /tmp/out && mkdir -p /tmp/out
-          cp src/TMessagesProj/build/outputs/apk/release/*.apk /tmp/out/
-          cp src/TMessagesProj/build/outputs/logs/* /tmp/out/ 2>/dev/null || true
+          cp src/TMessagesProj/build/outputs/apk/release/*.apk /tmp/out/ 2>/dev/null || true
+          cp /tmp/build.log /tmp/out/build.log 2>/dev/null || true
           cd /tmp/out
           ls -la
           git init -q -b artifacts

@@ -7,6 +7,7 @@ package org.telegram.utils.proxy.vless;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.util.Log;
 
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.FileLog;
@@ -27,6 +28,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public final class CdnProxyManager {
 
     private static final String PREF_ENABLED = "cdn_proxy_enabled";
+    private static final String TAG = "NagramCDN";
 
     private static final VlessGateway GATEWAY = new VlessGateway();
     private static final ExecutorService WORKER = Executors.newSingleThreadExecutor(new ThreadFactory() {
@@ -60,11 +62,14 @@ public final class CdnProxyManager {
         try {
             enabled = prefs().getBoolean(PREF_ENABLED, true);
             profile = VlessSubscriptionClient.loadCached();
+            Log.d(TAG, "bootstrap enabled=" + enabled + " cached=" + profile);
             if (profile != null) {
                 publish(GATEWAY.start(profile, VlessGateway.DEFAULT_PORT));
             }
+            Log.d(TAG, "bootstrap port=" + SharedConfig.cdnProxyPort + " active=" + SharedConfig.cdnProxyActive);
         } catch (Throwable e) {
             FileLog.e("vless: bootstrap failed", e);
+            Log.e(TAG, "bootstrap failed", e);
             enabled = false;
             publish(0);
         }
@@ -84,6 +89,7 @@ public final class CdnProxyManager {
     private static void refreshInternal(boolean forceNotify) {
         try {
             VlessProfile refreshed = VlessSubscriptionClient.refresh();
+            Log.d(TAG, "refresh result=" + refreshed);
             if (refreshed == null) {
                 return;
             }
@@ -94,6 +100,7 @@ public final class CdnProxyManager {
             int before = GATEWAY.getPort();
             int port = GATEWAY.start(refreshed, VlessGateway.DEFAULT_PORT);
             publish(port);
+            Log.d(TAG, "gateway port=" + port + " enabled=" + enabled);
             if (port > 0 && (forceNotify || before != port || !ConnectionsManager.isProxyUsingCdn())) {
                 notifyTgnet();
             }

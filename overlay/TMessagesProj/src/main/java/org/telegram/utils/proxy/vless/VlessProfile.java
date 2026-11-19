@@ -5,8 +5,12 @@
 
 package org.telegram.utils.proxy.vless;
 
-import android.net.Uri;
 import android.text.TextUtils;
+
+import java.net.URLDecoder;
+import java.util.HashMap;
+import java.util.Locale;
+import java.util.Map;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -61,40 +65,121 @@ public final class VlessProfile {
         return out;
     }
 
-    /** Parses a {@code vless://} sharing link. Returns null for anything unsupported. */
+    /**
+     * Parses a {@code vless://} sharing link.
+     *
+     * Android's Uri does not reliably expose authority parts for unknown schemes, so the link is
+     * split by hand: {@code vless://uuid@host:port?query#label}.
+     */
     public static VlessProfile parse(String link) {
-        if (TextUtils.isEmpty(link) || !link.regionMatches(true, 0, "vless://", 0, 8)) {
+        if (TextUtils.isEmpty(link)) {
             return null;
         }
-        try {
-            Uri uri = Uri.parse(link.trim());
-            String host = uri.getHost();
-            int port = uri.getPort();
-            String uuid = uri.getUserInfo();
-            if (TextUtils.isEmpty(host) || port <= 0 || TextUtils.isEmpty(uuid)) {
-                return null;
-            }
-            String type = uri.getQueryParameter("type");
-            if (!TextUtils.isEmpty(type) && !"ws".equalsIgnoreCase(type)) {
-                return null;
-            }
-            String encryption = uri.getQueryParameter("encryption");
-            if (!TextUtils.isEmpty(encryption) && !"none".equalsIgnoreCase(encryption)) {
-                return null;
-            }
-            String security = uri.getQueryParameter("security");
-            boolean tls = TextUtils.isEmpty(security) || "tls".equalsIgnoreCase(security);
-            String sni = uri.getQueryParameter("sni");
-            if (TextUtils.isEmpty(sni)) {
-                sni = uri.getQueryParameter("peer");
-            }
-            String wsHost = uri.getQueryParameter("host");
-            String path = uri.getQueryParameter("path");
-            String label = uri.getFragment();
-            VlessProfile profile = new VlessProfile(label, host, port, uuid, sni, wsHost, path, tls);
-            return profile.isValid() ? profile : null;
-        } catch (Exception ignore) {
+        String value = link.trim();
+        if (!value.regionMatches(true, 0, "vless://", 0, 8)) {
             return null;
+        }
+        value = value.substring(8);
+
+        String label = null;
+        int hash = value.indexOf('#');
+        if (hash >= 0) {
+            label = decode(value.substring(hash + 1));
+            value = value.substring(0, hash);
+        }
+
+        String query = null;
+        int qm = value.indexOf('?');
+        if (qm >= 0) {
+            query = value.substring(qm + 1);
+            value = value.substring(0, qm);
+        }
+
+        int at = value.lastIndexOf('@');
+        if (at <= 0) {
+            return null;
+        }
+        String uuid = decode(value.substring(0, at));
+        String hostPort = value.substring(at + 1);
+
+        String host;
+        int port;
+        if (hostPort.startsWith("[")) {
+            int close = hostPort.indexOf(']');
+            if (close < 0) {
+                return null;
+            }
+            host = hostPort.substring(1, close);
+            int colon = hostPort.indexOf(':', close);
+            if (colon < 0) {
+                return null;
+            }
+            port = parseInt(hostPort.substring(colon + 1));
+        } else {
+            int colon = hostPort.lastIndexOf(':');
+            if (colon <= 0) {
+                return null;
+            }
+            host = hostPort.substring(0, colon);
+            port = parseInt(hostPort.substring(colon + 1));
+        }
+        if (TextUtils.isEmpty(host) || port <= 0 || port > 65535 || TextUtils.isEmpty(uuid)) {
+            return null;
+        }
+
+        Map<String, String> params = new HashMap<>();
+        if (query != null) {
+            for (String pair : query.split("&")) {
+                if (pair.isEmpty()) {
+                    continue;
+                }
+                int eq = pair.indexOf('=');
+                if (eq < 0) {
+                    params.put(decode(pair).toLowerCase(Locale.US), "");
+                } else {
+                    params.put(decode(pair.substring(0, eq)).toLowerCase(Locale.US),
+                            decode(pair.substring(eq + 1)));
+                }
+            }
+        }
+
+        String type = params.get("type");
+        if (!TextUtils.isEmpty(type) && !"ws".equalsIgnoreCase(type)) {
+            return null;
+        }
+        String encryption = params.get("encryption");
+        if (!TextUtils.isEmpty(encryption) && !"none".equalsIgnoreCase(encryption)) {
+            return null;
+        }
+        String security = params.get("security");
+        boolean tls = TextUtils.isEmpty(security) || "tls".equalsIgnoreCase(security);
+        String sni = params.get("sni");
+        if (TextUtils.isEmpty(sni)) {
+            sni = params.get("peer");
+        }
+        String wsHost = params.get("host");
+        String path = params.get("path");
+
+        VlessProfile profile = new VlessProfile(label, host, port, uuid, sni, wsHost, path, tls);
+        return profile.isValid() ? profile : null;
+    }
+
+    private static int parseInt(String value) {
+        try {
+            return Integer.parseInt(value.trim());
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
+    private static String decode(String value) {
+        if (TextUtils.isEmpty(value)) {
+            return "";
+        }
+        try {
+            return URLDecoder.decode(value, "UTF-8");
+        } catch (Exception e) {
+            return value;
         }
     }
 

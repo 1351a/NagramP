@@ -44,7 +44,7 @@ import javax.net.ssl.SSLSocketFactory;
 final class VlessTunnel implements Closeable {
 
     private static final String TAG = "NagramVLESS";
-    private static final int CONNECT_TIMEOUT_MS = 5000;
+    private static final int CONNECT_TIMEOUT_MS = 10000;
     private static final int MAX_CONNECT_ADDRESSES = 3;
     private static final int WRITE_CHUNK = 32 * 1024;
     private static final int MAX_MESSAGE = 4 * 1024 * 1024;
@@ -96,6 +96,12 @@ final class VlessTunnel implements Closeable {
                     params.setApplicationProtocols(new String[]{"http/1.1"});
                 }
                 tls.setSSLParameters(params);
+                // TLS 1.3 ClientHello from Conscrypt is distinguishable from mainstream clients on
+                // filtered networks; TLS 1.2 negotiates reliably and is what the WS upgrade needs.
+                try {
+                    tls.setEnabledProtocols(new String[]{"TLSv1.2"});
+                } catch (Exception ignore) {
+                }
                 tls.setSoTimeout(CONNECT_TIMEOUT_MS);
                 Log.d(TAG, "tls handshake to " + profile.address + ":" + profile.port
                         + " sni=" + profile.sni + " target=" + dstHost + ":" + dstPort);

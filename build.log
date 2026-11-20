@@ -1,0 +1,1983 @@
+Downloading https://services.gradle.org/distributions/gradle-8.13-bin.zip
+.............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+
+Welcome to Gradle 8.13!
+
+Here are the highlights of this release:
+ - Daemon JVM auto-provisioning
+ - Enhancements for Scala plugin and JUnit testing
+ - Improvements for build authors and plugin developers
+
+For more details see https://docs.gradle.org/8.13/release-notes.html
+
+Starting a Gradle Daemon (subsequent builds will be faster)
+> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :buildSrc:pluginDescriptors
+> Task :buildSrc:processResources
+
+> Task :buildSrc:compileKotlin
+w: file:///home/runner/work/NagramP/NagramP/src/buildSrc/src/main/kotlin/com/example/GenerateSchemeTask.kt:67:13 Variable 'tlSchemaFilter' is never used
+w: file:///home/runner/work/NagramP/NagramP/src/buildSrc/src/main/kotlin/com/example/GenerateSchemeTask.kt:76:13 Variable 'totalHistory' is never used
+w: file:///home/runner/work/NagramP/NagramP/src/buildSrc/src/main/kotlin/com/example/GenerateSchemeTask.kt:111:13 Variable 'enumTypes' is never used
+w: file:///home/runner/work/NagramP/NagramP/src/buildSrc/src/main/kotlin/com/example/GenerateSchemeTask.kt:117:13 Variable 'schemaAllIds' is never used
+w: file:///home/runner/work/NagramP/NagramP/src/buildSrc/src/main/kotlin/org/telegram/plugin/TelegramBuildAppPlugin.kt:152:49 Parameter 'layers' is never used, could be renamed to _
+w: file:///home/runner/work/NagramP/NagramP/src/buildSrc/src/main/kotlin/org/telegram/tlrpc/SchemeTlValidator.kt:14:36 Parameter 'c' is never used, could be renamed to _
+w: file:///home/runner/work/NagramP/NagramP/src/buildSrc/src/main/kotlin/org/telegram/tlrpc/telegram/TelegramCodeParser.kt:48:63 'asInt(): Int' is deprecated. Deprecated in Java
+
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:classes
+> Task :buildSrc:jar
+
+> Configure project :jlatexmath
+WARNING: The option setting 'android.r8.optimizedResourceShrinking=true' is experimental.
+The current default is 'false'.
+WARNING: The option setting 'android.defaults.buildfeatures.buildconfig=true' is deprecated.
+The current default is 'false'.
+It will be removed in version 10.0 of the Android Gradle plugin.
+To keep using this feature, add the following to your module-level build.gradle files:
+    android.buildFeatures.buildConfig = true
+or from Android Studio, click: `Refactor` > `Migrate BuildConfig to Gradle Build Files`.
+
+> Task :jlatexmath:preBuild UP-TO-DATE
+> Task :jlatexmath:preReleaseBuild UP-TO-DATE
+> Task :jlatexmath:mergeReleaseJniLibFolders
+> Task :jlatexmath:mergeReleaseNativeLibs NO-SOURCE
+> Task :jlatexmath:copyReleaseJniLibsProjectOnly
+> Task :openpgp-api:preBuild UP-TO-DATE
+> Task :openpgp-api:preReleaseBuild UP-TO-DATE
+> Task :openpgp-api:mergeReleaseJniLibFolders
+> Task :openpgp-api:mergeReleaseNativeLibs NO-SOURCE
+> Task :openpgp-api:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj:objectboxPrepareBuild
+> Task :TMessagesProj:preBuild
+> Task :TMessagesProj:preReleaseBuild
+> Task :TMessagesProj:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-common:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-common:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-common:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj_Modules:media3:media-lib-container:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-container:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-container:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj_Modules:media3:media-lib-database:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-database:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-database:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-database:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-database:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:copyReleaseJniLibsProjectOnly
+> Task :TMessagesProj_Modules:media3:media-lib-session:preBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-session:preReleaseBuild UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-session:mergeReleaseJniLibFolders
+> Task :TMessagesProj_Modules:media3:media-lib-session:mergeReleaseNativeLibs NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-session:copyReleaseJniLibsProjectOnly
+
+> Task :TMessagesProj:mergeReleaseNativeLibs
+WARNING: [Processor] Library '/home/runner/.gradle/caches/modules-2/files-2.1/com.google.android.gms/play-services-cast-framework/21.4.0/c48f09b1c439b395ce46bc0d1c187913819f8c7f/play-services-cast-framework-21.4.0.aar' contains references to both AndroidX and old support library. This seems like the library is partially migrated. Jetifier will try to rewrite the library anyway.
+ Example of androidX reference: 'androidx/core/app/TaskStackBuilder'
+ Example of support library reference: 'android/support/v4/media/session/MediaSessionCompat$Token'
+WARNING: [Processor] Library '/home/runner/.gradle/caches/modules-2/files-2.1/androidx.car.app/app/1.7.0/368eb3df2522b17368912c34129ebf3c1f0f9519/app-1.7.0.aar' contains references to both AndroidX and old support library. This seems like the library is partially migrated. Jetifier will try to rewrite the library anyway.
+ Example of androidX reference: 'androidx/car/app/media/IMediaPlaybackHost'
+ Example of support library reference: 'android/support/v4/media/session/MediaSessionCompat$Token'
+
+> Task :jlatexmath:prepareReleaseArtProfile
+> Task :openpgp-api:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-common:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-container:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-database:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:prepareReleaseArtProfile
+> Task :TMessagesProj_Modules:media3:media-lib-session:prepareReleaseArtProfile
+
+> Task :TMessagesProj:mergeReleaseNativeLibs
+2 files found for path 'lib/arm64-v8a/liblanguage_id_l2c_jni.so'. This version of the Android Gradle Plugin chooses the file from the app or dynamic-feature module, but this can cause unexpected behavior or errors at runtime. Future versions of the Android Gradle Plugin may throw an error in this case.
+Inputs:
+ - /home/runner/work/NagramP/NagramP/src/TMessagesProj/build/intermediates/merged_jni_libs/release/mergeReleaseJniLibFolders/out/arm64-v8a/liblanguage_id_l2c_jni.so
+ - /home/runner/.gradle/caches/8.13/transforms/7d62d70ca354c246bd741acb3e3b6c6e/transformed/jetified-language-id-17.0.6/jni/arm64-v8a/liblanguage_id_l2c_jni.so
+
+
+> Task :TMessagesProj:mergeReleaseArtProfile
+
+> Task :TMessagesProj:stripReleaseDebugSymbols
+Unable to strip the following libraries, packaging them as they are: liblanguage_id_l2c_jni.so, libmaplibre.so, libobjectbox-jni.so, libsentry-android.so, libsentry.so, libtmessages.49.so. Run with --info option to learn more.
+
+> Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseBuildConfig
+> Task :TMessagesProj:extractReleaseNativeSymbolTables
+> Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseResValues
+> Task :TMessagesProj:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-common:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-common:processReleaseNavigationResources
+> Task :TMessagesProj:expandReleaseL8ArtProfileWildcards
+> Task :TMessagesProj_Modules:media3:media-lib-common:javaPreCompileRelease
+> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseBuildConfig
+> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseResValues FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-container:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-container:processReleaseNavigationResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-container:javaPreCompileRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseBuildConfig
+> Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseResValues FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-database:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-database:processReleaseNavigationResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-container:parseReleaseLocalResources
+> Task :TMessagesProj_Modules:media3:media-lib-database:javaPreCompileRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-common:parseReleaseLocalResources
+> Task :TMessagesProj_Modules:media3:media-lib-database:parseReleaseLocalResources
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseBuildConfig
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseResValues FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:processReleaseNavigationResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:parseReleaseLocalResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseRFile
+> Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseRFile
+> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseRFile
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseRFile
+
+> Task :TMessagesProj_Modules:media3:media-lib-common:compileReleaseJavaWithJavac
+warning: unknown enum constant Level.FULL
+  reason: class file for com.google.j2objc.annotations.ReflectionSupport$Level not found
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 warning
+
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:javaPreCompileRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseBuildConfig
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseResValues FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:processReleaseNavigationResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:parseReleaseLocalResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-common:bundleLibCompileToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseRFile
+
+> Task :TMessagesProj_Modules:media3:media-lib-container:compileReleaseJavaWithJavac
+warning: unknown enum constant MigrationStatus.STRICT
+  reason: class file for kotlin.annotations.jvm.MigrationStatus not found
+1 warning
+
+> Task :TMessagesProj_Modules:media3:media-lib-container:bundleLibCompileToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-database:compileReleaseJavaWithJavac
+> Task :TMessagesProj_Modules:media3:media-lib-database:bundleLibCompileToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:javaPreCompileRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:compileReleaseJavaWithJavac
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:bundleLibCompileToJarRelease
+
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:compileReleaseJavaWithJavac
+warning: unknown enum constant MigrationStatus.STRICT
+  reason: class file for kotlin.annotations.jvm.MigrationStatus not found
+1 warning
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:bundleLibCompileToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:generateReleaseBuildConfig
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:generateReleaseResValues FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:generateReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:processReleaseNavigationResources
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseBuildConfig
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseResValues FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:parseReleaseLocalResources
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:processReleaseNavigationResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:generateReleaseRFile
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:parseReleaseLocalResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:javaPreCompileRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseRFile
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:javaPreCompileRelease FROM-CACHE
+
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:compileReleaseJavaWithJavac
+warning: unknown enum constant When.MAYBE
+  reason: class file for javax.annotation.meta.When not found
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 warning
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseBuildConfig
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseResValues FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:bundleLibCompileToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:compileReleaseKotlin NO-SOURCE
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:compileReleaseJavaWithJavac
+warning: unknown enum constant Level.FULL
+  reason: class file for com.google.j2objc.annotations.ReflectionSupport$Level not found
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 warning
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:processReleaseNavigationResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:parseReleaseLocalResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseRFile
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:javaPreCompileRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:generateReleaseBuildConfig
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:bundleLibCompileToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:generateReleaseResValues FROM-CACHE
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:compileReleaseJavaWithJavac
+warning: unknown enum constant When.MAYBE
+  reason: class file for javax.annotation.meta.When not found
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 warning
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:generateReleaseResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:processReleaseNavigationResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:parseReleaseLocalResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:javaPreCompileRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:generateReleaseBuildConfig
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:generateReleaseResValues FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:generateReleaseResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:generateReleaseRFile
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:packageReleaseResources
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:compileReleaseJavaWithJavac
+warning: unknown enum constant When.MAYBE
+  reason: class file for javax.annotation.meta.When not found
+Note: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/exoplayer_hls/src/main/java/androidx/media3/exoplayer/hls/HlsMediaSource.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+1 warning
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:processReleaseNavigationResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:parseReleaseLocalResources FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:javaPreCompileRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:generateReleaseRFile
+
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:compileReleaseJavaWithJavac
+Note: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/decoder_ffmpeg/src/main/java/androidx/media3/decoder/ffmpeg/ExperimentalFfmpegVideoDecoder.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-session:generateReleaseBuildConfig
+> Task :TMessagesProj_Modules:media3:media-lib-session:generateReleaseResValues FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-session:generateReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-session:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-session:processReleaseNavigationResources
+> Task :TMessagesProj_Modules:media3:media-lib-session:javaPreCompileRelease FROM-CACHE
+> Task :jlatexmath:generateReleaseBuildConfig
+> Task :jlatexmath:generateReleaseResValues FROM-CACHE
+> Task :jlatexmath:generateReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-session:parseReleaseLocalResources
+> Task :jlatexmath:packageReleaseResources
+> Task :jlatexmath:processReleaseNavigationResources
+> Task :TMessagesProj_Modules:media3:media-lib-session:generateReleaseRFile
+> Task :jlatexmath:javaPreCompileRelease FROM-CACHE
+> Task :jlatexmath:parseReleaseLocalResources
+> Task :openpgp-api:generateReleaseBuildConfig
+> Task :openpgp-api:generateReleaseResValues FROM-CACHE
+> Task :openpgp-api:generateReleaseResources FROM-CACHE
+> Task :openpgp-api:packageReleaseResources
+> Task :TMessagesProj_Modules:media3:media-lib-session:compileReleaseAidl
+> Task :jlatexmath:generateReleaseRFile
+> Task :openpgp-api:processReleaseNavigationResources FROM-CACHE
+> Task :openpgp-api:compileReleaseAidl
+
+> Task :TMessagesProj_Modules:media3:media-lib-session:compileReleaseJavaWithJavac
+warning: unknown enum constant When.MAYBE
+  reason: class file for javax.annotation.meta.When not found
+warning: unknown enum constant Level.FULL
+  reason: class file for com.google.j2objc.annotations.ReflectionSupport$Level not found
+warning: unknown enum constant MigrationStatus.STRICT
+  reason: class file for kotlin.annotations.jvm.MigrationStatus not found
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+3 warnings
+
+> Task :TMessagesProj_Modules:media3:media-lib-session:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-session:exportReleaseConsumerProguardFiles
+
+> Task :jlatexmath:compileReleaseJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: /home/runner/work/NagramP/NagramP/src/TMessagesProj/lib/jlatexmath/jlatexmath/src/main/java/org/scilab/forge/jlatexmath/PredefinedTeXFormulaParser.java uses unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :jlatexmath:mergeReleaseGeneratedProguardFiles
+> Task :jlatexmath:exportReleaseConsumerProguardFiles
+> Task :openpgp-api:parseReleaseLocalResources FROM-CACHE
+> Task :openpgp-api:javaPreCompileRelease FROM-CACHE
+> Task :openpgp-api:generateReleaseRFile
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:mergeReleaseGeneratedProguardFiles
+
+> Task :openpgp-api:compileReleaseJavaWithJavac
+Note: /home/runner/work/NagramP/NagramP/src/openpgp-api/src/main/java/org/openintents/openpgp/util/OpenPgpApi.java uses or overrides a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+
+> Task :openpgp-api:mergeReleaseGeneratedProguardFiles
+> Task :openpgp-api:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-container:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-container:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-database:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-database:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-common:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-common:exportReleaseConsumerProguardFiles
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:bundleLibRuntimeToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-database:bundleLibRuntimeToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-container:bundleLibRuntimeToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:bundleLibRuntimeToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-common:bundleLibRuntimeToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:bundleLibRuntimeToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:bundleLibRuntimeToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:bundleLibRuntimeToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:bundleLibRuntimeToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:bundleLibRuntimeToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-session:bundleLibRuntimeToJarRelease
+> Task :jlatexmath:bundleLibRuntimeToJarRelease
+> Task :openpgp-api:bundleLibRuntimeToJarRelease
+> Task :jlatexmath:bundleLibCompileToJarRelease
+> Task :openpgp-api:bundleLibCompileToJarRelease
+> Task :TMessagesProj:checkReleaseDuplicateClasses
+> Task :TMessagesProj:buildKotlinToolingMetadata
+> Task :TMessagesProj:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :TMessagesProj:generateReleaseBuildConfig
+> Task :TMessagesProj:generateReleaseLocalizationUtilsJava
+> Task :TMessagesProj:generateReleaseNamespaceLocalizationUtilsJava
+> Task :jlatexmath:extractDeepLinksRelease
+> Task :openpgp-api:extractDeepLinksRelease FROM-CACHE
+> Task :TMessagesProj:generateReleaseResValues FROM-CACHE
+> Task :jlatexmath:processReleaseManifest
+> Task :openpgp-api:processReleaseManifest
+> Task :TMessagesProj:generateReleaseTelegramStrings
+> Task :TMessagesProj:processReleaseGoogleServices
+> Task :TMessagesProj:extractDeepLinksRelease
+> Task :TMessagesProj_Modules:media3:media-lib-common:extractDeepLinksRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-container:extractDeepLinksRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-database:extractDeepLinksRelease FROM-CACHE
+
+> Task :TMessagesProj_Modules:media3:media-lib-common:processReleaseManifest
+package="androidx.media3.common" found in source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/common/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="androidx.media3.common" from the source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/common/src/main/AndroidManifest.xml.
+
+> Task :TMessagesProj_Modules:media3:media-lib-container:processReleaseManifest
+package="androidx.media3.container" found in source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/container/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="androidx.media3.container" from the source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/container/src/main/AndroidManifest.xml.
+
+> Task :TMessagesProj_Modules:media3:media-lib-database:processReleaseManifest
+package="androidx.media3.database" found in source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/database/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="androidx.media3.database" from the source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/database/src/main/AndroidManifest.xml.
+
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:extractDeepLinksRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:extractDeepLinksRelease FROM-CACHE
+
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:processReleaseManifest
+package="androidx.media3.datasource" found in source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/datasource/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="androidx.media3.datasource" from the source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/datasource/src/main/AndroidManifest.xml.
+
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:extractDeepLinksRelease FROM-CACHE
+
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:processReleaseManifest
+package="androidx.media3.decoder" found in source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/decoder/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="androidx.media3.decoder" from the source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/decoder/src/main/AndroidManifest.xml.
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:extractDeepLinksRelease FROM-CACHE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:processReleaseManifest
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:extractDeepLinksRelease FROM-CACHE
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:processReleaseManifest
+package="androidx.media3.exoplayer" found in source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/exoplayer/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="androidx.media3.exoplayer" from the source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/exoplayer/src/main/AndroidManifest.xml.
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:extractDeepLinksRelease FROM-CACHE
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:processReleaseManifest
+package="androidx.media3.exoplayer.dash" found in source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/exoplayer_dash/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="androidx.media3.exoplayer.dash" from the source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/exoplayer_dash/src/main/AndroidManifest.xml.
+
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:extractDeepLinksRelease FROM-CACHE
+
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:processReleaseManifest
+package="androidx.media3.exoplayer.hls" found in source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/exoplayer_hls/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="androidx.media3.exoplayer.hls" from the source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/exoplayer_hls/src/main/AndroidManifest.xml.
+
+> Task :TMessagesProj_Modules:media3:media-lib-session:extractDeepLinksRelease FROM-CACHE
+
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:processReleaseManifest
+package="androidx.media3.extractor" found in source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/extractor/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="androidx.media3.extractor" from the source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/extractor/src/main/AndroidManifest.xml.
+
+> Task :TMessagesProj_Modules:media3:media-lib-session:processReleaseManifest
+package="androidx.media3.session" found in source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/session/src/main/AndroidManifest.xml.
+Setting the namespace via the package attribute in the source AndroidManifest.xml is no longer supported, and the value is ignored.
+Recommendation: remove package="androidx.media3.session" from the source AndroidManifest.xml: /home/runner/work/NagramP/NagramP/src/TMessagesProj_Modules/media/libraries/session/src/main/AndroidManifest.xml.
+
+> Task :TMessagesProj:resolveSentryClassAvailabilityRelease
+
+> Task :TMessagesProj:processReleaseMainManifest
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/AndroidManifest.xml:116:5-118:32 Warning:
+	uses-permission#android.permission.WRITE_EXTERNAL_STORAGE was tagged at AndroidManifest.xml:116 to replace another declaration but no other declaration present
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/AndroidManifest.xml:134:5-887:19 Warning:
+	application@android:supportsRtl was tagged at AndroidManifest.xml:134 to replace other declarations but no other declaration present
+
+> Task :TMessagesProj:releaseSentryGenerateIntegrationListTask
+> Task :TMessagesProj:parseSentryManifestMetadataRelease
+> Task :TMessagesProj:generateSentryBuildTimeOptionsRelease
+> Task :openpgp-api:writeReleaseAarMetadata
+> Task :jlatexmath:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-common:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-container:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-database:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:writeReleaseAarMetadata
+> Task :TMessagesProj_Modules:media3:media-lib-session:writeReleaseAarMetadata
+> Task :TMessagesProj:processReleaseNavigationResources
+> Task :TMessagesProj:checkReleaseAarMetadata
+> Task :TMessagesProj:compileReleaseNavigationResources
+> Task :TMessagesProj:injectCrashlyticsMappingFileIdRelease
+> Task :TMessagesProj:mapReleaseSourceSetPaths
+> Task :TMessagesProj:generateReleaseResources
+
+> Task :TMessagesProj:mergeReleaseResources
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-sv-rSE/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:10472:4: Multiple substitutions specified in non-positional format of string resource string/Gift2ActiveAuctionsActiveBidActive. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:10467:4: Multiple substitutions specified in non-positional format of string resource string/Gift2ActiveAuctionsActiveRound. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:8940:4: Multiple substitutions specified in non-positional format of string resource string/Gift2AuctionInfo2_one. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-ro-rRO/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:8941:4: Multiple substitutions specified in non-positional format of string resource string/Gift2AuctionInfo2_other. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:8938:4: Multiple substitutions specified in non-positional format of string resource string/Gift2AuctionInfoLearnMore2_one. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:8935:4: Multiple substitutions specified in non-positional format of string resource string/Gift2AuctionInfoLearnMore2_other. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:8936:4: Multiple substitutions specified in non-positional format of string resource string/Gift2AuctionInfo_one. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:8957:4: Multiple substitutions specified in non-positional format of string resource string/Gift2AuctionInfo_other. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:10473:4: Multiple substitutions specified in non-positional format of string resource string/Gift2AuctionsChangeRecipient2. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:11630:4: Multiple substitutions specified in non-positional format of string resource string/Gift2AveragePriceHint. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9111:4: Multiple substitutions specified in non-positional format of string resource string/Gift2InfoOutConverted_one. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9112:4: Multiple substitutions specified in non-positional format of string resource string/Gift2InfoOutConverted_other. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:10323:4: Multiple substitutions specified in non-positional format of string resource string/GiftAuctionInfo1Text_one. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:10324:4: Multiple substitutions specified in non-positional format of string resource string/GiftAuctionInfo1Text_other. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:10546:4: Multiple substitutions specified in non-positional format of string resource string/GiftOfferPayMulti. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:6003:4: Multiple substitutions specified in non-positional format of string resource string/NotificationTopicExceptionsDesctription_one. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:1806:4: Multiple substitutions specified in non-positional format of string resource string/NotificationTopicExceptionsDesctription_other. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-da-rDK/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-nl-rNL/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:10196:4: Multiple substitutions specified in non-positional format of string resource string/StarRatingDescription1. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-pt-rPT/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:10198:4: Multiple substitutions specified in non-positional format of string resource string/StarRatingDescription2. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:10185:4: Multiple substitutions specified in non-positional format of string resource string/StarRatingDescription3. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:6674:4: Multiple substitutions specified in non-positional format of string resource string/StoryAddedToAlbumTitle_one. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:6694:4: Multiple substitutions specified in non-positional format of string resource string/StoryAddedToAlbumTitle_other. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:6676:4: Multiple substitutions specified in non-positional format of string resource string/StoryRemovedFromAlbumTitle_one. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:6695:4: Multiple substitutions specified in non-positional format of string resource string/StoryRemovedFromAlbumTitle_other. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9965:4: Multiple substitutions specified in non-positional format of string resource string/SuggestAPostBelowSubtitleStarsAndTime. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9975:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedAdmin1. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9974:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedAdmin1PastSimple. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-zh-rTW/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9980:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedAdmin2. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9985:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedAdmin3Stars. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-no-rNO/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9982:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedAdmin3TON. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9987:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedAdmin4Stars. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9970:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedAdmin4TON. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9972:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedUser1. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-ar-rSA/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9971:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedUser1PastSimple. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-pl-rPL/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9984:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedUser3Stars. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9981:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedUser3TON. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9986:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedUser4Stars. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:9924:4: Multiple substitutions specified in non-positional format of string resource string/SuggestionAgreementReachedUser4TON. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:7357:4: Multiple substitutions specified in non-positional format of string resource string/UnconfirmedAuthMultipleFrom_one. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values/strings.xml:7354:4: Multiple substitutions specified in non-positional format of string resource string/UnconfirmedAuthMultipleFrom_other. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-uk-rUA/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-pt-rBR/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-vi-rVN/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-es-rES/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-it-rIT/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-in-rID/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-ja-rJP/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-fr-rFR/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-de-rDE/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-cs-rCZ/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-tr-rTR/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+
+> Task :TMessagesProj:packageReleaseResources
+
+> Task :TMessagesProj:mergeReleaseResources
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-fi-rFI/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-fa-rIR/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-ru-rRU/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-zh-rCN/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+/home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/res/values-el-rGR/strings_neko.xml:208:4: Multiple substitutions specified in non-positional format of string resource string/CloudConfigSyncDate. Did you mean to add the formatted="false" attribute?
+
+> Task :TMessagesProj:createReleaseCompatibleScreenManifests
+> Task :TMessagesProj:processReleaseManifest
+> Task :TMessagesProj:parseReleaseLocalResources
+> Task :TMessagesProj:processReleaseManifestForPackage
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:bundleLibCompileToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:bundleLibCompileToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-session:bundleLibCompileToJarRelease
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:bundleLibCompileToJarRelease
+> Task :TMessagesProj:extractProguardFiles
+> Task :jlatexmath:processReleaseJavaRes NO-SOURCE
+> Task :openpgp-api:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-common:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-container:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-database:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-session:processReleaseJavaRes NO-SOURCE
+> Task :TMessagesProj:mergeReleaseStartupProfile
+> Task :jlatexmath:mergeReleaseShaders
+> Task :jlatexmath:compileReleaseShaders NO-SOURCE
+> Task :jlatexmath:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj:javaPreCompileRelease
+> Task :jlatexmath:mergeReleaseAssets
+> Task :openpgp-api:mergeReleaseShaders
+> Task :openpgp-api:compileReleaseShaders NO-SOURCE
+> Task :openpgp-api:generateReleaseAssets UP-TO-DATE
+> Task :openpgp-api:mergeReleaseAssets
+> Task :TMessagesProj:collectExternalReleaseDependenciesForSentry
+> Task :TMessagesProj:mergeReleaseShaders
+> Task :TMessagesProj:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj:generateReleaseNamespaceStrings
+> Task :TMessagesProj_Modules:media3:media-lib-common:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-common:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-common:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-common:mergeReleaseAssets
+> Task :TMessagesProj_Modules:media3:media-lib-container:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-container:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-container:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-container:mergeReleaseAssets
+> Task :TMessagesProj_Modules:media3:media-lib-database:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-database:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-database:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-database:mergeReleaseAssets
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-datasource:mergeReleaseAssets
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder:mergeReleaseAssets
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-decoder-ffmpeg:mergeReleaseAssets
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer:mergeReleaseAssets
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-dash:mergeReleaseAssets
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-exoplayer-hls:mergeReleaseAssets
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-extractor:mergeReleaseAssets
+> Task :TMessagesProj_Modules:media3:media-lib-session:mergeReleaseShaders
+> Task :TMessagesProj_Modules:media3:media-lib-session:compileReleaseShaders NO-SOURCE
+> Task :TMessagesProj_Modules:media3:media-lib-session:generateReleaseAssets UP-TO-DATE
+> Task :TMessagesProj_Modules:media3:media-lib-session:mergeReleaseAssets
+> Task :TMessagesProj:extractReleaseVersionControlInfo
+> Task :TMessagesProj:collectReleaseDependencies
+> Task :TMessagesProj:sdkReleaseDependencyData
+> Task :TMessagesProj:validateSigningRelease
+> Task :TMessagesProj:writeReleaseAppMetadata
+> Task :TMessagesProj:writeReleaseSigningConfigVersions
+
+> Task :TMessagesProj:processReleaseResources
+=== :TMessagesProj:processReleaseResources ===
+AAPT additional parameters:
+  --stable-ids
+  /home/runner/work/NagramP/NagramP/src/TMessagesProj/build/generated/telegramStrings/release/stable-ids.txt
+
+warn: removing resource xyz.nextalone.nagram:string/AccDescrMuteMic without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrNumberOfViews_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrNumberOfViews_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrNumberOfViews_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrNumberOfViews_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrPasscodeUnlock without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendAudio_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendAudio_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendAudio_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendAudio_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendFiles_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendFiles_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendFiles_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendFiles_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendPhotos_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendPhotos_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendPhotos_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrSendPhotos_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrShareInChats_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrShareInChats_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrShareInChats_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrShareInChats_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AccDescrTakeMorePics without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ActionCreatedInviteLink without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ActionCreatedInviteLinkClickable without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ActionDeletedInviteLink without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ActionEditedInviteLink without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ActionEditedInviteLinkToSame without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ActionGroupCallEnded without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ActionGroupCallJustStarted without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ActionRevokedInviteLink without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddContactChat without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddContactFullChat without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddManyMembersAlertNamesText_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddManyMembersAlertNamesText_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddManyMembersAlertTitle_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddManyMembersAlertTitle_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddManyMembersAlertTitle_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddMembersAlertCountText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddMembersAlertTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddOneMemberAlertTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddPeopleNearby without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddRecipient without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AddToTheGroupTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AllowReadCallAndSms without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AllowReadSms without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AlwaysAllowPlaceholder without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AlwaysShareWithPlaceholder without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndMoreTypingGroup_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndMoreTypingGroup_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndMoreTypingGroup_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndMoreTypingGroup_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndMoreTyping_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndMoreTyping_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndMoreTyping_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndMoreTyping_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndOther_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndOther_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndOther_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AndOther_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AnimatedStickers without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AnswerOptions without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Answer_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Answer_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Answer_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Answer_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Appearance without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AreYouSureBlockContact without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AreYouSureDeleteMessages without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AreYouSureDeleteThisChatWithGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AttachBotsHelp without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AudioAutodownload without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AudioTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AudiosSavedHint_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AudiosSavedHint_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AudiosSavedHint_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AudiosSavedHint_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AuthAnotherClientTokenError without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AutoDeleteSetTimer without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AutoNightAutomatic without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AutoplayGifs without required default value.
+warn: removing resource xyz.nextalone.nagram:string/AwayTo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BackgroundBrightness without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BackgroundColor without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BackgroundColorPreviewLine1 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BackgroundColorPreviewLine2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BackgroundHexColorCode without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BackgroundRestricted without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BanFromTheGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Bans_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Bans_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Bans_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Bans_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BlockedUsersCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BlockedUsersCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BlockedUsersCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BlockedUsersCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BotInvite without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BotStop without required default value.
+warn: removing resource xyz.nextalone.nagram:string/BuiltInThemes without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CacheEmpty without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CanJoin_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CanJoin_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CanJoin_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CanJoin_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CancelAccountResetInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CancelForward without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CancelForwardMessage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChannelAddMembers without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChannelAlertCreate without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChannelDiscuss without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChannelJoinTo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChannelMessageContact without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChannelMessagePoll without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChannelVerifiedWarning without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Channels_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Channels_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Channels_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Channels_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Characters_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Characters_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Characters_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Characters_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatCamera without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatSetLocation without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatSetLocationInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatVideo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsException_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsException_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsException_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsException_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsNearbyHeader without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelectedClearCache_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelectedClearCache_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelectedClearCache_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelectedClearCache_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelectedClear_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelectedClear_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelectedClear_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelectedClear_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelected_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelected_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelected_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChatsSelected_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Chats_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Chats_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Chats_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Chats_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChooseFromYourStickers without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChooseMapPreviewProvider without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChooseStickerSetNotFound without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChooseStickerSetNotFoundInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChooseStickerSetPlaceholder without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChromeCustomTabs without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ChromeCustomTabsInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ClearRecentEmoji without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ColorDark without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ColorPickerReset without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ColorPickerResetAll without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ColorSepia without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ColorThemes without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommentsCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommentsCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommentsCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommentsCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommentsNoNumber_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommentsNoNumber_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommentsNoNumber_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommentsNoNumber_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Comments_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Comments_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Comments_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Comments_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommonGroups_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommonGroups_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommonGroups_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CommonGroups_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CompatibilityChat without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ConfirmDeleteCallLog without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ConnectingToProxyDisable without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ConnectingToProxyDisableAlert without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ConnectingToProxyTapToDisable without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ContactShare without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ConvertGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ConvertGroupInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ConvertGroupInfo2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ConvertGroupInfo3 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ConvertGroupMenu without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CountOfResults_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CountOfResults_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CountOfResults_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CountOfResults_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CreateNewLinkHelp without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CreateNewThemeInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/CustomThemes without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DaysBold_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DaysBold_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DaysBold_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DaysBold_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DaysLeft_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DaysLeft_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DaysLeft_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DaysLeft_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Days_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Days_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Days_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Days_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DebugMenuDisablePauseMusic without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DebugMenuDisableSmoothKeyboard without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DebugMenuEnablePauseMusic without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DebugMenuEnableSmoothKeyboard without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeleteAccountIfAwayFor without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeleteAndStop without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeleteBackground_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeleteBackground_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeleteBackground_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeleteBackground_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeleteBanUser without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeleteGif without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeleteLocalization without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeleteTheseChats without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Deletions_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Deletions_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Deletions_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Deletions_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DeviceStorage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DiceInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DiscussionChannelGroupSetHelp without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DiscussionChannelHelp without required default value.
+warn: removing resource xyz.nextalone.nagram:string/DocumentsTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EmailPasswordConfirmText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EmailPasswordConfirmText3 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EmojiBigSize without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EmptyExceptions without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EnableProxyAlert without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EnableProxyAlert2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EnterCurrentPasscode without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EnterNewFirstPasscode without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EventLogEmpty without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EventLogEmptyChannel without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EventLogEmptySearch without required default value.
+warn: removing resource xyz.nextalone.nagram:string/EventLogEmptyTextSearch without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Exception_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Exception_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Exception_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Exception_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FeaturedStickersInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FileSavedHint without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilesSavedHint_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilesSavedHint_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilesSavedHint_one without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilesSavedHint_other without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilesSavedHint_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilesSavedHint_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Files_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Files_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Files_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Files_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterAddException without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterExcludeArchived without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterExcludeMuted without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterExcludeRead without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterRemoveFromAlertFullText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterSecretChats without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterShowMoreChats_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterShowMoreChats_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterShowMoreChats_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterShowMoreChats_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FilterUnread without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FiltersSetup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FiltersSetupPinAlert without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FingerprintHelp without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FingerprintInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FingerprintNotRecognized without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedAudio_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedAudio_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedAudio_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedAudio_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedContact_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedContact_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedContact_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedContact_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedFile_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedFile_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedFile_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedFile_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedLocation_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedLocation_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedLocation_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedLocation_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedMessage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedMessageCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedMessageCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedMessageCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedMessageCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedMusic_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedMusic_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedMusic_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedMusic_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedPhoto_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedPhoto_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedPhoto_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedPhoto_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedPoll_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedPoll_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedPoll_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedPoll_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedRound_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedRound_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedRound_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedRound_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedSticker_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedSticker_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedSticker_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedSticker_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedVideo_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedVideo_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedVideo_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ForwardedVideo_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FromCamera without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FromChats_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FromChats_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FromChats_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FromChats_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FromGalley without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FwdMessageToChats without required default value.
+warn: removing resource xyz.nextalone.nagram:string/FwdMessagesToChats without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GIFs_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GIFs_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GIFs_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GIFs_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GifCaption without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GifSavedToDownloadsHint without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GifsTab without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GpsDisabledAlert without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GpsDisabledAlertTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GroupNotifications without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GroupPhotosHelp without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GroupsAndChannels without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GroupsInCommon without required default value.
+warn: removing resource xyz.nextalone.nagram:string/GroupsInCommonTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Groups_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Groups_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Groups_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Groups_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/HideDeviceInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/HideDeviceInfoOff without required default value.
+warn: removing resource xyz.nextalone.nagram:string/HideDeviceInfoOn without required default value.
+warn: removing resource xyz.nextalone.nagram:string/HoursBold_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/HoursBold_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/HoursBold_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/HoursBold_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Hours_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Hours_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Hours_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Hours_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ImagesTab without required default value.
+warn: removing resource xyz.nextalone.nagram:string/InstantViewNightMode without required default value.
+warn: removing resource xyz.nextalone.nagram:string/InteractionsChartTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Invitations_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Invitations_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Invitations_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Invitations_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/InviteLinkCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/InviteLinkCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/InviteLinkCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/InviteLinkCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/InviteTextNum_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/InviteTextNum_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/InviteTextNum_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/InviteTextNum_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/JoinGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/KMetersAway without required default value.
+warn: removing resource xyz.nextalone.nagram:string/KeepMediaInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/KickFromSupergroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Km without required default value.
+warn: removing resource xyz.nextalone.nagram:string/LanguageUnofficial without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Languages_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Languages_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Languages_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Languages_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Later without required default value.
+warn: removing resource xyz.nextalone.nagram:string/LinksTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Links_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Links_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Links_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Links_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/LocalCache without required default value.
+warn: removing resource xyz.nextalone.nagram:string/LocalDatabaseClear without required default value.
+warn: removing resource xyz.nextalone.nagram:string/LocalGifCache without required default value.
+warn: removing resource xyz.nextalone.nagram:string/LocationNotifiationButton without required default value.
+warn: removing resource xyz.nextalone.nagram:string/LowDiskSpaceNeverRemove without required default value.
+warn: removing resource xyz.nextalone.nagram:string/LowDiskSpaceTitle2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MakeAdmin without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MakeMyselfVisible without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MakeMyselfVisibleInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MakeMyselfVisibleTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ManageChannel without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ManageChannelMenu without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ManageGroupMenu without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MasksCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MasksCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MasksCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MasksCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MediaSavedHint_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MediaSavedHint_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MediaSavedHint_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MediaSavedHint_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MediaSelected_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MediaSelected_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MediaSelected_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MediaSelected_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Media_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Media_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Media_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Media_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MegaDeleteAlert without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MegaDeleteInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MembersCount without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MembersCountSelected_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MembersCountSelected_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MembersCountSelected_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MembersCountSelected_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MembersTalking_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MembersTalking_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MembersTalking_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MembersTalking_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Members_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Members_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Members_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Members_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessageLifetimePhoto without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessageLifetimeVideo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessageNotifications without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessagesDeletedHint_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessagesDeletedHint_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessagesDeletedHint_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessagesDeletedHint_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessagesUnpinned_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessagesUnpinned_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessagesUnpinned_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MessagesUnpinned_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MetersAway without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Meters_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Meters_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Meters_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Meters_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Mi without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MinutesBold_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MinutesBold_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MinutesBold_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MinutesBold_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Minutes_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Minutes_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Minutes_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Minutes_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MobileUsage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Months_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Months_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Months_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Months_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MusicFiles_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MusicFiles_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MusicFiles_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/MusicFiles_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NearbyCreateGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NearbyCreateGroupInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NearbyCreateGroupInfo2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NearbyPeopleGreetingsDescription without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NearbyPeopleGreetingsMessage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NearbyPlaces without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NearbyStartGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NetworkUsageMobile without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NetworkUsageRoaming without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NetworkUsageWiFi without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NeverAllowPlaceholder without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NeverShareWithPlaceholder without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NewMessages_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NewMessages_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NewMessages_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NewMessages_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NewThemePreviewLine2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoAudio without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoBlockedChannel without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoBlockedGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoBlockedUsers without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoCallLog without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoContactsYet without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoContactsYetLine1 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoContactsYetLine2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoContactsYetLine3 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoFilesFound without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoMasks without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoOtherSessions without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoOtherSessionsInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoOtherWebSessions without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoOtherWebSessionsInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoRecentGIFs without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NoRecentPhotos without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotMounted without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationActionPinnedContact without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationActionPinnedContactChannel without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationActionPinnedPoll without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationActionPinnedPollChannel without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationMessageContact without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationMessageGroupContact without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationMessageGroupPoll without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationMessagePoll without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationsDefaultOff without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationsDefaultOn without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationsEnableCustom without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationsForChannels without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationsForGroups without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationsForPrivateChats without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationsPriority without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationsPriorityDefault without required default value.
+warn: removing resource xyz.nextalone.nagram:string/NotificationsPriorityMax without required default value.
+warn: removing resource xyz.nextalone.nagram:string/OfCounted without required default value.
+warn: removing resource xyz.nextalone.nagram:string/OnlineCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/OnlineCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/OnlineCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/OnlineCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/OpenUrlAlert without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Option_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Option_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Option_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Option_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PaintFramed without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PaintMarker without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PaintNeon without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PaintOutlined without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PaintPen without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PaintRegular without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Participants_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Participants_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Participants_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Participants_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PasscodeDoNotMatch without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PasscodePIN without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PasscodePassword without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PassportCorrectErrors without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PassportInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PassportSDK_Cancel without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PassportSDK_DownloadTelegram without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PassportSDK_LogInWithTelegram without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PassportSDK_OpenGooglePlay without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PassportSDK_TelegramPassport without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PaymentTransactionMessage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PendingEmailText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleCanJoinViaLink without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleCanJoinViaLinkCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleCanJoinViaLinkCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleCanJoinViaLinkCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleCanJoinViaLinkCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleJoinedRemaining_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleJoinedRemaining_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleJoinedRemaining_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleJoinedRemaining_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleJoined_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleJoined_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleJoined_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleJoined_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleNearby without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleNearbyAccessInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleNearbyAllowAccess without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleNearbyEmpty without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleNearbyGps without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleNearbyGpsInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleNearbyHeader without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleNearbyInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PeopleNearbyInfo2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PermissionContacts without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PermissionNoAudio without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PermissionNoAudioVideo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PermissionNoCamera without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PermissionNoLocationPosition without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PermissionStorage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhoneNumberChange without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhotoCaption without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhotoSavedToDownloadsHint without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhotosSavedHint_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhotosSavedHint_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhotosSavedHint_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhotosSavedHint_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhotosSelected_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhotosSelected_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhotosSelected_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PhotosSelected_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Photos_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Photos_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Photos_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Photos_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PinToTopLimitReached without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PinToTopLimitReached2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PinnedMessagesCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PinnedMessagesCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PinnedMessagesCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PinnedMessagesCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PinnedPoll without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PleaseEnterFirstPassword without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PleaseEnterPassword without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Points_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Points_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Points_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Points_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PollOptions without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PollQuestion without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PollSubmitVotes without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PollViewResults without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PreviewFeedback without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PrivacyAdvanced without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PrivacyCallsP2PTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PrivacyPayments without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PrivacyPaymentsClearInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PrivacyProfilePhotoInfo2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PsaInfo_covid without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PsaMessageInfo_covid without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PsaMessage_covid without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PsaType_covid without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PublicSharesCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PublicSharesCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PublicSharesCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/PublicSharesCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/QRCodePermissionNoCamera without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Question without required default value.
+warn: removing resource xyz.nextalone.nagram:string/QuickReplyCustom without required default value.
+warn: removing resource xyz.nextalone.nagram:string/QuizInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ReEnterYourPasscode without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Recipient_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Recipient_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Recipient_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Recipient_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/RegisterText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/RemoveFromListText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/RemoveStickersCount without required default value.
+warn: removing resource xyz.nextalone.nagram:string/RemovedUser_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/RemovedUser_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/RemovedUser_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/RemovedUser_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Replies_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Replies_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Replies_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Replies_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ReportSpam without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ReportSpamAndLeave without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ReportSpamLocation without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ReportSpamUser without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ResetAccountButton without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ResetMyAccountText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Restrictions_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Restrictions_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Restrictions_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Restrictions_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/RoamingUsage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SearchImagesInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SecondsBold_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SecondsBold_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SecondsBold_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SecondsBold_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Seconds_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Seconds_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Seconds_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Seconds_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SelectContacts without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SelectImage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SelectOtherChat without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SendContactTo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SendContactToGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SendGameTo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SendGameToGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SendItems without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SendMessagesTo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SendMessagesToGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SessionsInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SetAdmins without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SetAdminsAll without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SetAdminsAllInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SetAdminsNotAllInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SetAdminsTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SetBackground without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ShareTelegram without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SharedAudioFiles without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SharedFilesTab without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SharedLinksTab without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SharedMediaTab without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SharedMediaTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SharedMusicTab without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SharedToPrivateMessagesAndGroups without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SharedVoiceTab without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Shared_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Shared_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Shared_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Shared_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Shares_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Shares_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Shares_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Shares_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ShowAllThemes without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ShowNearbyPlaces without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ShowVotes_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ShowVotes_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ShowVotes_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ShowVotes_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Shuffle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SinglePhotosHelp without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SlideToCancel without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SmartNotificationsAlert without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SmartNotificationsDetail without required default value.
+warn: removing resource xyz.nextalone.nagram:string/StartVoipChannelAlertText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/StartVoipChatAlertText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/StickerSets_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/StickerSets_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/StickerSets_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/StickerSets_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Stickers_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Stickers_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Stickers_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Stickers_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/StopLiveLocationAlertAll without required default value.
+warn: removing resource xyz.nextalone.nagram:string/StopLiveLocationAlertToGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/StopLiveLocationAlertToUser without required default value.
+warn: removing resource xyz.nextalone.nagram:string/StopShowingMe without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Subscribers_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Subscribers_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Subscribers_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Subscribers_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SyncContactsDeleteInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/SystemRoot without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TapOnThePencil without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TapToViewAsList without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TelegramContacts_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TelegramContacts_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TelegramContacts_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TelegramContacts_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TerminateSessionInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TerminateSessionQuestion without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TerminateWebSessionQuestion without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TextSelectionHit without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TextSize without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ThemeBlue without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ThemeDarkBlue without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ThemeGraphite without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ThemeInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ThemeInstallCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ThemeInstallCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ThemeInstallCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ThemeInstallCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ThemePreviewTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ThemeUrl without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Times_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Times_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Times_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Times_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/TypeScheduleMessage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Unban without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UnbanText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UnblockText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UnsupportedMedia without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UpdateNow without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UpdatedMinutes_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UpdatedMinutes_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UpdatedMinutes_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UpdatedMinutes_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UploadImage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UploadItems without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UsbActive without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UseProxyForCalls without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UseProxyForCallsInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UserBioEmpty without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UserRestrictionsBy without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UserRestrictionsDisabled without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UserRestrictionsRead without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UserRestrictionsUntil without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UsernamePlaceholder without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UsersCountTitle_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UsersCountTitle_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UsersCountTitle_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UsersCountTitle_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UsersCount_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UsersCount_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UsersCount_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/UsersCount_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Users_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Users_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Users_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Users_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideoCaption without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideoMessagesAutodownload without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideoSavedToDownloadsHint without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideosSavedHint_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideosSavedHint_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideosSavedHint_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideosSavedHint_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideosSelected_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideosSelected_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideosSelected_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VideosSelected_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Videos_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Videos_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Videos_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Videos_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ViewDetails without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ViewReplies_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ViewReplies_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ViewReplies_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ViewReplies_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/ViewStats without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Views_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Views_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Views_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Views_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Voice_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Voice_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Voice_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Voice_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipAnsweringAsAccount without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupCopyListenLink without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupCopySpeakerLink without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupEndedStartNew without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupInvitedToVoiceChat without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupJoinCall without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupMuteMemberAlertText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupMuteMemberAlertTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupOpenGroup without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupRemoveMemberAlertText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupRemoveMemberAlertTitle without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupStartAs without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupUnmute without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipGroupVolume without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipHangingUp without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipIncoming without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipMutedByAdminInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipNeedMicCameraPermission without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipNeedMicPermission without required default value.
+warn: removing resource xyz.nextalone.nagram:string/VoipVideoUnavailable without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Vote_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Vote_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Vote_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Vote_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Weeks_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Weeks_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Weeks_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Weeks_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/WhoCanAddMembers without required default value.
+warn: removing resource xyz.nextalone.nagram:string/WhoCanAddMembersAdmins without required default value.
+warn: removing resource xyz.nextalone.nagram:string/WhoCanAddMembersAllMembers without required default value.
+warn: removing resource xyz.nextalone.nagram:string/WiFiUsage without required default value.
+warn: removing resource xyz.nextalone.nagram:string/WidgetPasscode without required default value.
+warn: removing resource xyz.nextalone.nagram:string/WidgetPasscodeEnable without required default value.
+warn: removing resource xyz.nextalone.nagram:string/WidgetPasscodeEnable2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Years_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Years_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Years_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/Years_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/YourEmailCode without required default value.
+warn: removing resource xyz.nextalone.nagram:string/YourEmailCodeInfo without required default value.
+warn: removing resource xyz.nextalone.nagram:string/YourPasswordSuccessText without required default value.
+warn: removing resource xyz.nextalone.nagram:string/_tg_cancel without required default value.
+warn: removing resource xyz.nextalone.nagram:string/_tg_open_google_play without required default value.
+warn: removing resource xyz.nextalone.nagram:string/download_telegram_text without required default value.
+warn: removing resource xyz.nextalone.nagram:string/formatDateScheduleDay without required default value.
+warn: removing resource xyz.nextalone.nagram:string/formatterMonthName without required default value.
+warn: removing resource xyz.nextalone.nagram:string/formatterMonthYear2 without required default value.
+warn: removing resource xyz.nextalone.nagram:string/items_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/items_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/items_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/items_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/login_with_telegram without required default value.
+warn: removing resource xyz.nextalone.nagram:string/messages_few without required default value.
+warn: removing resource xyz.nextalone.nagram:string/messages_many without required default value.
+warn: removing resource xyz.nextalone.nagram:string/messages_two without required default value.
+warn: removing resource xyz.nextalone.nagram:string/messages_zero without required default value.
+warn: removing resource xyz.nextalone.nagram:string/telegram_passport without required default value.
+
+
+> Task :TMessagesProj:generateReleaseLottieMeta
+R.raw.phone_stars_to_dots (0x7f0e00be) — fps=60, frames=10, mono=false
+R.raw.gift_upgrade (0x7f0e0063) — fps=60, frames=42, mono=false
+R.raw.caption_show (0x7f0e0023) — fps=60, frames=20, mono=false
+R.raw.tsv_setup_monkey_close_and_peek (0x7f0e0176) — fps=60, frames=33, mono=false
+R.raw.ic_mute (0x7f0e0074) — fps=60, frames=66, mono=false
+R.raw.ticks_double (0x7f0e0165) — fps=60, frames=54, mono=false
+R.raw.speed_15to2 (0x7f0e0110) — fps=60, frames=75, mono=false
+R.raw.voice_and_video (0x7f0e018d) — fps=60, frames=60, mono=false
+R.raw.fire_off (0x7f0e0053) — fps=60, frames=120, mono=false
+R.raw.utyan_private (0x7f0e0188) — fps=60, frames=180, mono=false
+R.raw.roundcamera_flash_on (0x7f0e00fc) — fps=60, frames=30, mono=false
+R.raw.tab_models (0x7f0e0150) — fps=60, frames=17, mono=false
+R.raw.gigagroup_convert (0x7f0e0065) — fps=60, frames=120, mono=false
+R.raw.large_readtime (0x7f0e008d) — fps=60, frames=180, mono=false
+R.raw.ic_download (0x7f0e0073) — fps=60, frames=120, mono=false
+R.raw.ubuntu_30 (0x7f0e017c) — fps=60, frames=180, mono=false
+R.raw.biz_links (0x7f0e0004) — fps=60, frames=125, mono=false
+R.raw.chat_audio_record_delete_2 (0x7f0e0027) — fps=60, frames=52, mono=false
+R.raw.msg_emoji_other (0x7f0e009f) — fps=60, frames=60, mono=false
+R.raw.diceloop (0x7f0e003e) — fps=60, frames=60, mono=false
+R.raw.sms_incoming_info (0x7f0e0108) — fps=60, frames=90, mono=false
+R.raw.cake (0x7f0e0013) — fps=60, frames=180, mono=false
+R.raw.keyboard_to_smile (0x7f0e0089) — fps=60, frames=12, mono=false
+R.raw.ic_ban (0x7f0e0070) — fps=60, frames=120, mono=false
+R.raw.sandclock (0x7f0e00ff) — fps=60, frames=180, mono=false
+R.raw.gift_broken (0x7f0e0061) — fps=60, frames=180, mono=false
+R.raw.star_reaction (0x7f0e011b) — fps=60, frames=163, mono=false
+R.raw.msg_story_keep (0x7f0e00a4) — fps=60, frames=46, mono=false
+R.raw.star_reaction_effect3 (0x7f0e011f) — fps=60, frames=85, mono=false
+R.raw.email_check_inbox (0x7f0e0048) — fps=60, frames=141, mono=false
+R.raw.ipad_30 (0x7f0e0086) — fps=60, frames=180, mono=false
+R.raw.qr_code_logo (0x7f0e00e9) — fps=60, frames=54, mono=false
+R.raw.tab_poll (0x7f0e0154) — fps=60, frames=17, mono=false
+R.raw.firefox_30 (0x7f0e0057) — fps=60, frames=180, mono=false
+R.raw.passcode_lock_close (0x7f0e00ae) — fps=60, frames=39, mono=false
+R.raw.voip_unmuted (0x7f0e01a3) — fps=60, frames=120, mono=false
+R.raw.linkbroken (0x7f0e008e) — fps=60, frames=120, mono=false
+R.raw.keyboard_to_gif (0x7f0e0088) — fps=60, frames=12, mono=false
+R.raw.filter_reorder (0x7f0e0051) — fps=60, frames=61, mono=false
+R.raw.tsv_setup_mail (0x7f0e0175) — fps=60, frames=160, mono=false
+R.raw.tsv_setup_monkey_close_and_peek_to_idle (0x7f0e0177) — fps=60, frames=33, mono=false
+R.raw.filter_no_chats (0x7f0e0050) — fps=60, frames=180, mono=false
+R.raw.premium_gift (0x7f0e00ce) — fps=60, frames=180, mono=false
+R.raw.utyan_saved_messages (0x7f0e0189) — fps=60, frames=180, mono=false
+R.raw.photo_arrow (0x7f0e00bf) — fps=60, frames=30, mono=false
+R.raw.caption_up (0x7f0e0024) — fps=60, frames=35, mono=false
+R.raw.profile_voicechat (0x7f0e00e8) — fps=60, frames=48, mono=false
+R.raw.msg_emoji_objects (0x7f0e009e) — fps=60, frames=60, mono=false
+R.raw.msg_emoji_flags (0x7f0e009c) — fps=60, frames=60, mono=false
+R.raw.chat_audio_record_delete (0x7f0e0026) — fps=60, frames=52, mono=false
+R.raw.wallet_perfect (0x7f0e01a9) — fps=60, frames=120, mono=false
+R.raw.convert_video (0x7f0e0038) — fps=60, frames=38, mono=false
+R.raw.swipe_unpin (0x7f0e013b) — fps=60, frames=48, mono=false
+R.raw.ic_pin (0x7f0e0075) — fps=60, frames=120, mono=false
+R.raw.tab_calls (0x7f0e013f) — fps=60, frames=6, mono=false
+R.raw.call_accept (0x7f0e0014) — fps=60, frames=180, mono=false
+R.raw.sound_on (0x7f0e010c) — fps=60, frames=61, mono=false
+R.raw.sun (0x7f0e0131) — fps=60, frames=36, mono=false
+R.raw.topics (0x7f0e016a) — fps=60, frames=180, mono=false
+R.raw.camera (0x7f0e0017) — fps=60, frames=86, mono=false
+R.raw.tab_gift_reverse (0x7f0e014d) — fps=60, frames=5, mono=false
+R.raw.photo_suggest_icon (0x7f0e00c6) — fps=60, frames=85, mono=false
+R.raw.fragment_username (0x7f0e005d) — fps=60, frames=180, mono=false
+R.raw.saved_messages (0x7f0e0100) — fps=60, frames=56, mono=false
+R.raw.profile_unmuting (0x7f0e00e7) — fps=60, frames=57, mono=false
+R.raw.folder_in (0x7f0e0058) — fps=60, frames=57, mono=false
+R.raw.media_shrink (0x7f0e0097) — fps=60, frames=20, mono=false
+R.raw.tab_article_reverse (0x7f0e013e) — fps=60, frames=5, mono=false
+R.raw.tab_models_reverse (0x7f0e0151) — fps=60, frames=5, mono=false
+R.raw.e_hand_2 (0x7f0e0046) — fps=60, frames=180, mono=false
+R.raw.utyan_call (0x7f0e017f) — fps=60, frames=180, mono=false
+R.raw.permission_request_contacts (0x7f0e00b7) — fps=60, frames=120, mono=false
+R.raw.qr_resistance_dog (0x7f0e00ee) — fps=60, frames=180, mono=false
+R.raw.dots_loading (0x7f0e0040) — fps=60, frames=60, mono=false
+R.raw.voip_muted (0x7f0e019d) — fps=60, frames=120, mono=false
+R.raw.incoming_calls (0x7f0e0081) — fps=60, frames=90, mono=false
+R.raw.star_fill (0x7f0e0118) — fps=60, frames=180, mono=false
+R.raw.voice_outlined (0x7f0e0190) — fps=60, frames=24, mono=false
+R.raw.tab_wallet (0x7f0e015d) — fps=60, frames=17, mono=false
+R.raw.payment_success (0x7f0e00b0) — fps=60, frames=63, mono=false
+R.raw.info (0x7f0e0082) — fps=60, frames=45, mono=false
+R.raw.stories_intro_pause (0x7f0e012c) — fps=60, frames=46, mono=false
+R.raw.star_reaction_effect5 (0x7f0e0121) — fps=60, frames=90, mono=false
+R.raw.ic_unmute (0x7f0e007a) — fps=60, frames=65, mono=false
+R.raw.folder_out (0x7f0e0059) — fps=60, frames=54, mono=false
+R.raw.gif_to_keyboard (0x7f0e005e) — fps=60, frames=12, mono=false
+R.raw.chats_archiveavatar (0x7f0e002a) — fps=60, frames=50, mono=false
+R.raw.imported (0x7f0e0080) — fps=60, frames=120, mono=false
+R.raw.iphone_30 (0x7f0e0087) — fps=60, frames=180, mono=false
+R.raw.stars_topup (0x7f0e0124) — fps=60, frames=109, mono=false
+R.raw.topics_tabs (0x7f0e016c) — fps=60, frames=100, mono=false
+R.raw.filters (0x7f0e0052) — fps=60, frames=180, mono=false
+R.raw.story_bomb2 (0x7f0e012e) — fps=60, frames=51, mono=false
+R.raw.seek_speed_hint (0x7f0e0101) — fps=60, frames=42, mono=false
+R.raw.tab_location_reverse (0x7f0e014f) — fps=60, frames=5, mono=false
+R.raw.tab_sticker_reverse (0x7f0e015a) — fps=60, frames=5, mono=false
+R.raw.report_police (0x7f0e00f4) — fps=60, frames=180, mono=false
+R.raw.story_bomb1 (0x7f0e012d) — fps=60, frames=44, mono=false
+R.raw.speed_limit (0x7f0e0114) — fps=60, frames=51, mono=false
+R.raw.tab_files_reverse (0x7f0e0149) — fps=60, frames=5, mono=false
+R.raw.ic_save_to_gifs (0x7f0e0077) — fps=60, frames=90, mono=false
+R.raw.stories_intro_go_back (0x7f0e0129) — fps=60, frames=40, mono=false
+R.raw.gif_to_smile (0x7f0e005f) — fps=60, frames=12, mono=false
+R.raw.smile_to_keyboard (0x7f0e0106) — fps=60, frames=12, mono=false
+R.raw.chats_hide (0x7f0e002c) — fps=60, frames=50, mono=false
+R.raw.tab_checklist_reverse (0x7f0e0142) — fps=60, frames=5, mono=false
+R.raw.video_stop (0x7f0e018c) — fps=60, frames=60, mono=false
+R.raw.voice_muted (0x7f0e018f) — fps=60, frames=29, mono=false
+R.raw.permission_request_apk (0x7f0e00b5) — fps=60, frames=180, mono=false
+R.raw.biz_map (0x7f0e0005) — fps=60, frames=180, mono=false
+R.raw.tab_reply (0x7f0e0156) — fps=60, frames=17, mono=false
+R.raw.double_icon (0x7f0e0041) — fps=60, frames=120, mono=false
+R.raw.media_mute_unmute (0x7f0e0096) — fps=60, frames=44, mono=false
+R.raw.swipe_unmute (0x7f0e013a) — fps=60, frames=35, mono=false
+R.raw.tsv_setup_intro (0x7f0e0174) — fps=60, frames=180, mono=false
+R.raw.chats_archive (0x7f0e0029) — fps=60, frames=50, mono=false
+R.raw.topics_top (0x7f0e016d) — fps=60, frames=157, mono=false
+R.raw.passkey (0x7f0e00af) — fps=60, frames=157, mono=false
+R.raw.media_forbidden (0x7f0e0095) — fps=60, frames=180, mono=false
+R.raw.roundcamera_flip (0x7f0e00fd) — fps=60, frames=30, mono=false
+R.raw.email_setup_heart (0x7f0e0049) — fps=60, frames=180, mono=false
+R.raw.permission_request_microphone (0x7f0e00ba) — fps=60, frames=60, mono=false
+R.raw.tab_gallery (0x7f0e014a) — fps=60, frames=17, mono=false
+R.raw.camera_wait (0x7f0e001f) — fps=60, frames=300, mono=false
+R.raw.keyboard_to_sticker (0x7f0e008a) — fps=60, frames=12, mono=false
+R.raw.star_reaction_effect4 (0x7f0e0120) — fps=60, frames=90, mono=false
+R.raw.transcribe_out (0x7f0e0170) — fps=60, frames=20, mono=false
+R.raw.msg_emoji_food (0x7f0e009d) — fps=60, frames=60, mono=false
+R.raw.msg_emoji_activities (0x7f0e009a) — fps=60, frames=60, mono=false
+R.raw.speaker_to_bt (0x7f0e010f) — fps=60, frames=60, mono=false
+R.raw.ic_save_to_music (0x7f0e0078) — fps=60, frames=120, mono=false
+R.raw.voip_invite (0x7f0e019c) — fps=60, frames=120, mono=false
+R.raw.utyan_passcode (0x7f0e0187) — fps=60, frames=180, mono=false
+R.raw.unlock_icon (0x7f0e017d) — fps=60, frames=120, mono=false
+R.raw.download_arrow (0x7f0e0042) — fps=60, frames=30, mono=false
+R.raw.linux_30 (0x7f0e008f) — fps=60, frames=180, mono=false
+R.raw.calls_log (0x7f0e0016) — fps=60, frames=120, mono=false
+R.raw.ic_delete (0x7f0e0072) — fps=60, frames=66, mono=false
+R.raw.boosts (0x7f0e0008) — fps=60, frames=49, mono=false
+R.raw.tab_reply_reverse (0x7f0e0157) — fps=60, frames=5, mono=false
+R.raw.wallet_diamond_blue (0x7f0e01a6) — fps=60, frames=121, mono=false
+R.raw.hand_1 (0x7f0e006a) — fps=60, frames=720, mono=false
+R.raw.import_check (0x7f0e007c) — fps=60, frames=13, mono=false
+R.raw.phone_dots_to_stars (0x7f0e00bc) — fps=60, frames=10, mono=false
+R.raw.chats_unarchive (0x7f0e002f) — fps=60, frames=50, mono=false
+R.raw.tab_colors (0x7f0e0143) — fps=60, frames=17, mono=false
+R.raw.voice_to_text (0x7f0e0192) — fps=60, frames=120, mono=false
+R.raw.fragment (0x7f0e005c) — fps=60, frames=59, mono=false
+R.raw.msg_antispam (0x7f0e0099) — fps=60, frames=62, mono=false
+R.raw.tsv_setup_email_sent (0x7f0e0172) — fps=60, frames=180, mono=false
+R.raw.notify_toggle (0x7f0e00aa) — fps=60, frames=80, mono=false
+R.raw.profile_muting (0x7f0e00e6) — fps=60, frames=37, mono=false
+R.raw.msg_stories_saved (0x7f0e00a3) — fps=60, frames=40, mono=false
+R.raw.mac_30 (0x7f0e0091) — fps=60, frames=180, mono=false
+R.raw.permission_request_camera (0x7f0e00b6) — fps=60, frames=60, mono=false
+R.raw.position_above (0x7f0e00cc) — fps=60, frames=20, mono=false
+R.raw.utyan_change_number (0x7f0e0180) — fps=60, frames=180, mono=false
+R.raw.ic_admin (0x7f0e006f) — fps=60, frames=120, mono=false
+R.raw.speed_2to1 (0x7f0e0112) — fps=60, frames=72, mono=false
+R.raw.name_show (0x7f0e00a8) — fps=60, frames=20, mono=false
+R.raw.custom_emoji_reaction (0x7f0e003a) — fps=60, frames=89, mono=false
+R.raw.channel_create (0x7f0e0025) — fps=60, frames=180, mono=false
+R.raw.utyan_gallery (0x7f0e0184) — fps=60, frames=180, mono=false
+R.raw.monetize (0x7f0e0098) — fps=60, frames=45, mono=false
+R.raw.large_message_lock (0x7f0e008c) — fps=60, frames=180, mono=false
+R.raw.msg_emoji_travel (0x7f0e00a1) — fps=60, frames=60, mono=false
+R.raw.story_repost (0x7f0e012f) — fps=60, frames=36, mono=false
+R.raw.tab_files (0x7f0e0148) — fps=60, frames=17, mono=false
+R.raw.star_reaction_effect1 (0x7f0e011d) — fps=60, frames=90, mono=false
+R.raw.swipe_community_ungroup (0x7f0e0134) — fps=60, frames=29, mono=false
+R.raw.tab_contacts (0x7f0e0145) — fps=60, frames=6, mono=false
+R.raw.caption_limit (0x7f0e0022) — fps=60, frames=90, mono=false
+R.raw.sticker_to_keyboard (0x7f0e0127) — fps=60, frames=12, mono=false
+R.raw.voip_record_saved (0x7f0e019f) — fps=60, frames=56, mono=false
+R.raw.wallet_gift_trash (0x7f0e01a8) — fps=60, frames=120, mono=false
+R.raw.tab_emoji_reverse (0x7f0e0147) — fps=60, frames=5, mono=false
+R.raw.contacts_sync_on (0x7f0e0037) — fps=60, frames=120, mono=false
+R.raw.tab_checklist (0x7f0e0141) — fps=60, frames=17, mono=false
+R.raw.silent_mute (0x7f0e0103) — fps=60, frames=58, mono=false
+R.raw.db_migration_placeholder (0x7f0e003c) — fps=60, frames=180, mono=false
+R.raw.group_pip_delete_icon (0x7f0e0069) — fps=60, frames=66, mono=false
+R.raw.wallet_congrats (0x7f0e01a5) — fps=60, frames=180, mono=false
+R.raw.star_reaction_effect2 (0x7f0e011e) — fps=60, frames=83, mono=false
+R.raw.tsv_setup_monkey_tracking (0x7f0e017b) — fps=60, frames=180, mono=false
+R.raw.star_reaction_click (0x7f0e011c) — fps=60, frames=125, mono=false
+R.raw.tsv_setup_hint (0x7f0e0173) — fps=60, frames=180, mono=false
+R.raw.voip_record_start (0x7f0e01a0) — fps=60, frames=64, mono=false
+R.raw.android_30 (0x7f0e0001) — fps=60, frames=180, mono=false
+R.raw.plane_logo_plain (0x7f0e00ca) — fps=60, frames=54, mono=false
+R.raw.call_mute (0x7f0e0015) — fps=60, frames=60, mono=false
+R.raw.timer_3 (0x7f0e0167) — fps=60, frames=66, mono=false
+R.raw.raised_hand (0x7f0e00ef) — fps=60, frames=90, mono=false
+R.raw.roundcamera_flash_off (0x7f0e00fb) — fps=60, frames=30, mono=false
+R.raw.photo_marker (0x7f0e00c2) — fps=60, frames=30, mono=false
+R.raw.mute_for (0x7f0e00a6) — fps=60, frames=61, mono=false
+R.raw.wallet_science (0x7f0e01aa) — fps=60, frames=180, mono=false
+R.raw.utyan_schedule (0x7f0e018a) — fps=60, frames=180, mono=false
+R.raw.tab_settings (0x7f0e0158) — fps=60, frames=6, mono=false
+R.raw.contacts_sync_off (0x7f0e0036) — fps=60, frames=120, mono=false
+R.raw.fire_on (0x7f0e0054) — fps=60, frames=120, mono=false
+R.raw.camera_flip2 (0x7f0e001b) — fps=60, frames=60, mono=false
+R.raw.hint_swipe_reply (0x7f0e006e) — fps=60, frames=120, mono=false
+R.raw.profile_leave (0x7f0e00e5) — fps=60, frames=48, mono=false
+R.raw.voip_filled (0x7f0e019b) — fps=60, frames=404, mono=false
+R.raw.position_below (0x7f0e00cd) — fps=60, frames=20, mono=false
+R.raw.tab_music (0x7f0e0152) — fps=60, frames=17, mono=false
+R.raw.wallet_diamond_white (0x7f0e01a7) — fps=60, frames=121, mono=false
+R.raw.write_contacts_fab_icon (0x7f0e01b1) — fps=60, frames=49, mono=false
+R.raw.hand_2 (0x7f0e006b) — fps=60, frames=540, mono=false
+R.raw.tag_icon_3 (0x7f0e015f) — fps=60, frames=57, mono=false
+R.raw.done (0x7f0e003f) — fps=60, frames=120, mono=false
+R.raw.photo_spoiler (0x7f0e00c5) — fps=60, frames=180, mono=false
+R.raw.swipe_pin (0x7f0e0138) — fps=60, frames=31, mono=false
+R.raw.passcode_lock (0x7f0e00ad) — fps=60, frames=71, mono=false
+R.raw.copy (0x7f0e0039) — fps=60, frames=61, mono=false
+R.raw.auto_night_off (0x7f0e0002) — fps=60, frames=180, mono=false
+R.raw.media_enlarge (0x7f0e0094) — fps=60, frames=20, mono=false
+R.raw.voice_mini (0x7f0e018e) — fps=60, frames=172, mono=false
+R.raw.download_finish (0x7f0e0043) — fps=60, frames=41, mono=false
+R.raw.edge_30 (0x7f0e0047) — fps=60, frames=180, mono=false
+R.raw.options_to_search (0x7f0e00ac) — fps=60, frames=120, mono=false
+R.raw.not_available (0x7f0e00a9) — fps=60, frames=180, mono=false
+R.raw.utyan_draw (0x7f0e0181) — fps=60, frames=180, mono=false
+R.raw.speed_1to15 (0x7f0e0111) — fps=60, frames=75, mono=false
+R.raw.chats_unhide (0x7f0e0030) — fps=60, frames=50, mono=false
+R.raw.shared_link_enter (0x7f0e0102) — fps=60, frames=43, mono=false
+R.raw.stars_send (0x7f0e0123) — fps=60, frames=140, mono=false
+R.raw.chats_archived (0x7f0e002b) — fps=60, frames=45, mono=false
+R.raw.msg_translate (0x7f0e00a5) — fps=60, frames=180, mono=false
+R.raw.chat_audio_record_delete_3 (0x7f0e0028) — fps=60, frames=40, mono=false
+R.raw.qr_login (0x7f0e00eb) — fps=60, frames=360, mono=false
+R.raw.statistic_preload (0x7f0e0126) — fps=60, frames=180, mono=false
+R.raw.chrome_30 (0x7f0e0031) — fps=60, frames=180, mono=false
+R.raw.photo_neon (0x7f0e00c3) — fps=60, frames=30, mono=false
+R.raw.ticks_single (0x7f0e0166) — fps=60, frames=25, mono=false
+R.raw.msg_stories_archive (0x7f0e00a2) — fps=60, frames=27, mono=false
+R.raw.sound_download (0x7f0e0109) — fps=60, frames=66, mono=false
+R.raw.sticker_to_smile (0x7f0e0128) — fps=60, frames=12, mono=false
+R.raw.code_laptop (0x7f0e0032) — fps=60, frames=64, mono=false
+R.raw.tab_gallery_reverse (0x7f0e014b) — fps=60, frames=5, mono=false
+R.raw.download_progress (0x7f0e0044) — fps=60, frames=50, mono=false
+R.raw.player_prev (0x7f0e00cb) — fps=60, frames=25, mono=false
+R.raw.tab_chats (0x7f0e0140) — fps=60, frames=6, mono=false
+R.raw.tab_colors_reverse (0x7f0e0144) — fps=60, frames=5, mono=false
+R.raw.utyan_streaming (0x7f0e018b) — fps=60, frames=180, mono=false
+R.raw.tsv_setup_monkey_peek (0x7f0e017a) — fps=60, frames=33, mono=false
+R.raw.swipe_disabled (0x7f0e0136) — fps=60, frames=30, mono=false
+R.raw.qr_matrix (0x7f0e00ed) — fps=60, frames=180, mono=false
+R.raw.msg_emoji_smiles (0x7f0e00a0) — fps=60, frames=60, mono=false
+R.raw.tsv_monkey_close (0x7f0e0171) — fps=60, frames=98, mono=false
+R.raw.swipe_read (0x7f0e0139) — fps=60, frames=35, mono=false
+R.raw.tab_article (0x7f0e013d) — fps=60, frames=16, mono=false
+R.raw.camera_outline (0x7f0e001d) — fps=60, frames=86, mono=false
+R.raw.photo_text_allign (0x7f0e00c7) — fps=60, frames=60, mono=false
+R.raw.tab_gift (0x7f0e014c) — fps=60, frames=17, mono=false
+R.raw.error (0x7f0e004b) — fps=60, frames=120, mono=false
+R.raw.contact_check (0x7f0e0035) — fps=60, frames=45, mono=false
+R.raw.gram (0x7f0e0067) — fps=60, frames=20, mono=false
+R.raw.name_hide (0x7f0e00a7) — fps=60, frames=20, mono=false
+R.raw.tab_poll_reverse (0x7f0e0155) — fps=60, frames=5, mono=false
+R.raw.sound_off (0x7f0e010b) — fps=60, frames=61, mono=false
+R.raw.tab_music_reverse (0x7f0e0153) — fps=60, frames=5, mono=false
+R.raw.tsv_setup_monkey_idle1 (0x7f0e0178) — fps=60, frames=30, mono=false
+R.raw.tab_sticker (0x7f0e0159) — fps=60, frames=17, mono=false
+R.raw.phone_flash_call (0x7f0e00bd) — fps=60, frames=64, mono=false
+R.raw.utyan_newborn (0x7f0e0186) — fps=60, frames=180, mono=false
+R.raw.star_stroke (0x7f0e0122) — fps=60, frames=180, mono=false
+R.raw.bt_to_speaker (0x7f0e000a) — fps=60, frames=60, mono=false
+R.raw.caption_hide (0x7f0e0021) — fps=60, frames=20, mono=false
+R.raw.bot_webview_sheet_to_cross (0x7f0e0009) — fps=60, frames=22, mono=false
+R.raw.utyan_empty (0x7f0e0182) — fps=60, frames=180, mono=false
+R.raw.msg_emoji_cat (0x7f0e009b) — fps=60, frames=60, mono=false
+R.raw.photo_eraser (0x7f0e00c1) — fps=60, frames=30, mono=false
+R.raw.swipe_unread (0x7f0e013c) — fps=60, frames=36, mono=false
+R.raw.ic_boosts_replace (0x7f0e0071) — fps=60, frames=90, mono=false
+R.raw.stories_intro_go_to_next (0x7f0e012b) — fps=60, frames=39, mono=false
+R.raw.ic_save_to_gallery (0x7f0e0076) — fps=60, frames=65, mono=false
+R.raw.camera_flip (0x7f0e001a) — fps=60, frames=40, mono=false
+R.raw.addone_icon (0x7f0e0000) — fps=60, frames=120, mono=false
+R.raw.utyan_cache (0x7f0e017e) — fps=60, frames=180, mono=false
+R.raw.stories_intro_go_forward (0x7f0e012a) — fps=60, frames=38, mono=false
+R.raw.smile_to_gif (0x7f0e0105) — fps=60, frames=12, mono=false
+R.raw.tab_emoji (0x7f0e0146) — fps=60, frames=18, mono=false
+R.raw.gram_reverse (0x7f0e0068) — fps=60, frames=10, mono=false
+R.raw.permission_request_folder (0x7f0e00b8) — fps=60, frames=240, mono=false
+R.raw.speed_slow (0x7f0e0115) — fps=60, frames=72, mono=false
+R.raw.photo_blur (0x7f0e00c0) — fps=60, frames=30, mono=false
+R.raw.rate (0x7f0e00f0) — fps=60, frames=90, mono=false
+R.raw.gift (0x7f0e0060) — fps=60, frames=180, mono=false
+R.raw.ic_unpin (0x7f0e007b) — fps=60, frames=120, mono=false
+R.raw.swipe_delete (0x7f0e0135) — fps=60, frames=38, mono=false
+R.raw.import_progress (0x7f0e007f) — fps=60, frames=57, mono=false
+R.raw.timer_toast (0x7f0e0168) — fps=60, frames=41, mono=false
+R.raw.biz_clock (0x7f0e0003) — fps=60, frames=180, mono=false
+R.raw.topics_list (0x7f0e016b) — fps=60, frames=100, mono=false
+R.raw.safari_30 (0x7f0e00fe) — fps=60, frames=180, mono=false
+R.raw.tab_location (0x7f0e014e) — fps=60, frames=17, mono=false
+R.raw.swipe_mute (0x7f0e0137) — fps=60, frames=35, mono=false
+R.raw.caption_down (0x7f0e0020) — fps=60, frames=35, mono=false
+R.raw.silent_unmute (0x7f0e0104) — fps=60, frames=58, mono=false
+R.raw.voice_outlined2 (0x7f0e0191) — fps=60, frames=84, mono=false
+R.raw.chats_swipearchive (0x7f0e002e) — fps=60, frames=120, mono=false
+R.raw.windows_30 (0x7f0e01b0) — fps=60, frames=180, mono=false
+R.raw.ic_unban (0x7f0e0079) — fps=60, frames=120, mono=false
+R.raw.phone_dots (0x7f0e00bb) — fps=60, frames=60, mono=false
+R.raw.permission_request_location (0x7f0e00b9) — fps=60, frames=60, mono=false
+R.raw.large_lastseen (0x7f0e008b) — fps=60, frames=180, mono=false
+R.raw.chats_infotip (0x7f0e002d) — fps=60, frames=45, mono=false
+R.raw.tab_symbols (0x7f0e015b) — fps=60, frames=17, mono=false
+R.raw.star_premium_2 (0x7f0e011a) — fps=60, frames=50, mono=false
+R.raw.import_finish (0x7f0e007d) — fps=60, frames=120, mono=false
+R.raw.utyan_gigagroup (0x7f0e0185) — fps=60, frames=150, mono=false
+R.raw.giveaway_results (0x7f0e0066) — fps=60, frames=180, mono=false
+R.raw.transcribe (0x7f0e016e) — fps=60, frames=180, mono=false
+R.raw.bubble (0x7f0e000b) — fps=60, frames=180, mono=false
+R.raw.import_loop (0x7f0e007e) — fps=60, frames=180, mono=false
+R.raw.emoji_stars (0x7f0e004a) — fps=60, frames=180, mono=false
+R.raw.folder_share (0x7f0e005a) — fps=60, frames=91, mono=false
+R.raw.smile_to_sticker (0x7f0e0107) — fps=60, frames=12, mono=false
+R.raw.gift_crafting (0x7f0e0062) — fps=60, frames=47, mono=false
+R.raw.dartloop (0x7f0e003b) — fps=60, frames=90, mono=false
+R.raw.filter_new (0x7f0e004f) — fps=60, frames=120, mono=false
+R.raw.wallet_allset (0x7f0e01a4) — fps=60, frames=180, mono=false
+R.raw.photo_pen (0x7f0e00c4) — fps=60, frames=30, mono=false
+R.raw.tab_wallet_reverse (0x7f0e015e) — fps=60, frames=5, mono=false
+R.raw.speaker (0x7f0e010e) — fps=60, frames=34, mono=false
+R.raw.tsv_setup_monkey_idle2 (0x7f0e0179) — fps=60, frames=30, mono=false
+R.raw.fire_once (0x7f0e0055) — fps=60, frames=120, mono=false
+R.raw.transcribe_in (0x7f0e016f) — fps=60, frames=20, mono=false
+R.raw.tab_symbols_reverse (0x7f0e015c) — fps=60, frames=5, mono=false
+R.raw.voip_allow_talk (0x7f0e0196) — fps=60, frames=52, mono=false
+R.raw.forward (0x7f0e005b) — fps=60, frames=47, mono=false
+R.raw.speed_fast (0x7f0e0113) — fps=60, frames=75, mono=false
+R.raw.utyan_empty2 (0x7f0e0183) — fps=60, frames=180, mono=false
+R.raw.sun_outline (0x7f0e0132) — fps=60, frames=36, mono=false
+
+> Task :TMessagesProj:generateReleaseStringResourceIdsAsset
+Generated 12638 string resource IDs: /home/runner/work/NagramP/NagramP/src/TMessagesProj/build/generated/stringResourceIds/release/assets/string_resource_ids.bin
+Size: 101108 bytes
+
+> Task :TMessagesProj:mergeReleaseAssets
+> Task :TMessagesProj:injectSentryDebugMetaPropertiesIntoAssetsRelease
+> Task :TMessagesProj:compressReleaseAssets
+> Task :TMessagesProj:kaptGenerateStubsReleaseKotlin
+w: Support for language version 2.0+ in kapt is in Alpha and must be enabled explicitly. Falling back to 1.9.
+
+> Task :TMessagesProj:kaptReleaseKotlin
+[ObjectBox] ID model file unchanged: default.json
+[ObjectBox] ObjectBox Generator
+[ObjectBox] Copyright 2017-2025 ObjectBox Ltd, objectbox.io. Licensed under GNU Affero General Public License, Version 3.
+[ObjectBox] This program comes with ABSOLUTELY NO WARRANTY
+[ObjectBox] Processing schema version 1...
+[ObjectBox] Written tw.nekomimi.nekogram.database.ChatCCTargetCursor.java
+[ObjectBox] Written tw.nekomimi.nekogram.database.ChatCCTarget_.java
+[ObjectBox] Written tw.nekomimi.nekogram.database.ChatLanguageCursor.java
+[ObjectBox] Written tw.nekomimi.nekogram.database.ChatLanguage_.java
+[ObjectBox] Written tw.nekomimi.nekogram.database.NetworkLogItemCursor.java
+[ObjectBox] Written tw.nekomimi.nekogram.database.NetworkLogItem_.java
+[ObjectBox] Written tw.nekomimi.nekogram.database.TransItemCursor.java
+[ObjectBox] Written tw.nekomimi.nekogram.database.TransItem_.java
+[ObjectBox] Written tw.nekomimi.nekogram.database.MyObjectBox.java
+[ObjectBox] Processed 4 entities in 100ms
+
+> Task :TMessagesProj:compileReleaseKotlin
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/parts/DialogTrans.kt:35:5 This is a delicate API and its use requires care. Make sure you fully read and understand documentation of the declaration that is marked as a delicate API.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/transtale/Translator.kt:32:9 Condition is always 'false'.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/transtale/Translator.kt:38:19 'constructor(p0: String!): Locale' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/transtale/Translator.kt:40:19 'constructor(p0: String!, p1: String!): Locale' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/ui/BottomBuilder.kt:100:22 'fun setBackgroundDrawable(p0: Drawable!): Unit' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/ui/BottomBuilder.kt:154:22 'fun setBackgroundDrawable(p0: Drawable!): Unit' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/ui/BottomBuilder.kt:207:13 'fun setBackgroundDrawable(p0: Drawable!): Unit' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/ui/BottomBuilder.kt:253:13 'fun setBackgroundDrawable(p0: Drawable!): Unit' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/AlertUtil.kt:218:5 '@JvmOverloads' annotation has no effect for methods without default arguments.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/FileUtil.kt:241:43 'static field CPU_ABI: String!' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/FileUtil.kt:243:68 'static field CPU_ABI: String!' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/FileUtil.kt:247:43 'static field CPU_ABI2: String!' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/FileUtil.kt:249:61 'static field CPU_ABI2: String!' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/GsonUtil.kt:20:20 'var isLenient: Boolean' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/LocaleUtil.kt:68:34 'static fun fromHtml(p0: String!): Spanned!' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/ShareUtil.kt:67:5 '@JvmOverloads' annotation has no effect for methods without default arguments.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/UIUtil.kt:20:9 This is a delicate API and its use requires care. Make sure you fully read and understand documentation of the declaration that is marked as a delicate API.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/UIUtil.kt:32:9 This is a delicate API and its use requires care. Make sure you fully read and understand documentation of the declaration that is marked as a delicate API.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/VibrateUtil.kt:47:26 'fun vibrate(p0: VibrationEffect!, p1: AudioAttributes!): Unit' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/VibrateUtil.kt:52:26 'fun vibrate(p0: Long): Unit' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/VibrateUtil.kt:75:26 'fun vibrate(p0: VibrationEffect!, p1: AudioAttributes!): Unit' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/java/tw/nekomimi/nekogram/utils/VibrateUtil.kt:80:26 'fun vibrate(p0: LongArray!, p1: Int): Unit' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/kotlin/xyz/nextalone/nagram/helper/ExternalStickerCacheHelper.kt:265:42 'fun addObserver(observer: NotificationCenter.NotificationCenterDelegate!, id: Int): Unit' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/kotlin/xyz/nextalone/nagram/helper/HyperOsHelper.kt:29:29 'field versionCode: Int' is deprecated. Deprecated in Java.
+w: file:///home/runner/work/NagramP/NagramP/src/TMessagesProj/src/main/kotlin/xyz/nextalone/nagram/ui/ItemOptionsPatch.kt:60:18 'fun setBackgroundDrawable(p0: Drawable!): Unit' is deprecated. Deprecated in Java.
+
+> Task :TMessagesProj:compileReleaseJavaWithJavac
+Note: Some input files use or override a deprecated API.
+Note: Recompile with -Xlint:deprecation for details.
+Note: Some input files use unchecked or unsafe operations.
+Note: Recompile with -Xlint:unchecked for details.
+
+> Task :TMessagesProj:processReleaseJavaRes
+> Task :TMessagesProj:mergeReleaseJavaResource
+> Task :TMessagesProj:transformReleaseClassesWithAsm
+> Task :TMessagesProj:mergeReleaseGeneratedProguardFiles
+> Task :TMessagesProj:expandReleaseArtProfileWildcards
+> Task :TMessagesProj:minifyReleaseWithR8
+> Task :TMessagesProj:uploadCrashlyticsMappingFileRelease SKIPPED
+> Task :TMessagesProj:convertShrunkResourcesToBinaryRelease
+> Task :TMessagesProj:optimizeReleaseResources
+> Task :TMessagesProj:l8DexDesugarLibRelease
+> Task :TMessagesProj:compileReleaseArtProfile
+> Task :TMessagesProj:packageRelease
+> Task :TMessagesProj:createReleaseApkListingFileRedirect
+> Task :TMessagesProj:assembleRelease
+ASM Instrumentation process wasn't able to resolve some classes, this means that
+the instrumented classes might contain corrupt stack frames. Make sure the
+dependencies that contain these classes are on the runtime or the provided
+classpath. Otherwise, the jvm might fail to load the corrupt classes at runtime
+when running in a jvm environment like unit tests.
+
+Classes that weren't resolved:
+> sun.misc.Unsafe
+> com.google.common.util.concurrent.ListenableFuture
+> androidx.core.text.PrecomputedTextCompat
+> org.bouncycastle.crypto.params.ParametersWithID
+> org.bouncycastle.crypto.params.ParametersWithRandom
+> org.bouncycastle.crypto.CipherParameters
+> org.bouncycastle.asn1.BERSequence
+> org.bouncycastle.asn1.DERSequence
+> org.bouncycastle.asn1.DLSequence
+> org.bouncycastle.jce.provider.BouncyCastleProvider
+-- 9 more classes --
+
+
+[Incubating] Problems report is available at: file:///home/runner/work/NagramP/NagramP/src/build/reports/problems/problems-report.html
+
+Deprecated Gradle features were used in this build, making it incompatible with Gradle 9.0.
+
+You can use '--warning-mode all' to show the individual deprecation warnings and determine if they come from your own scripts or plugins.
+
+For more on this, please refer to https://docs.gradle.org/8.13/userguide/command_line_interface.html#sec:command_line_warnings in the Gradle documentation.
+
+BUILD SUCCESSFUL in 15m 48s
+346 actionable tasks: 284 executed, 62 from cache

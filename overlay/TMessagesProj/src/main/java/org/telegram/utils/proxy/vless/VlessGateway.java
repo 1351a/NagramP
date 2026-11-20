@@ -288,13 +288,17 @@ public final class VlessGateway {
     private void pump(Socket client, VlessTunnel tunnel) {
         Thread up = new Thread(() -> {
             byte[] buffer = new byte[16 * 1024];
+            long sent = 0;
             try {
                 InputStream in = client.getInputStream();
                 int n;
                 while ((n = in.read(buffer)) > 0) {
                     tunnel.write(buffer, 0, n);
+                    sent += n;
                 }
-            } catch (IOException ignore) {
+                Log.d(TAG, "pump up: client EOF after " + sent + " bytes");
+            } catch (IOException e) {
+                Log.d(TAG, "pump up: " + e + " after " + sent + " bytes");
             } finally {
                 tunnel.close();
                 closeQuietly(client);
@@ -304,14 +308,18 @@ public final class VlessGateway {
         up.start();
 
         byte[] buffer = new byte[16 * 1024];
+        long received = 0;
         try {
             OutputStream out = client.getOutputStream();
             int n;
             while ((n = tunnel.read(buffer)) > 0) {
                 out.write(buffer, 0, n);
                 out.flush();
+                received += n;
             }
-        } catch (IOException ignore) {
+            Log.d(TAG, "pump down: tunnel EOF after " + received + " bytes");
+        } catch (IOException e) {
+            Log.d(TAG, "pump down: " + e + " after " + received + " bytes");
         } finally {
             tunnel.close();
             closeQuietly(client);

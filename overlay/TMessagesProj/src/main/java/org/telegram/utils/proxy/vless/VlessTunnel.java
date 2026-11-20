@@ -354,6 +354,7 @@ final class VlessTunnel implements Closeable {
                 }
             }
             if (opcode == 0x8) {
+                Log.d(TAG, "ws close frame from peer");
                 return null;
             }
             if (opcode == 0x9) {

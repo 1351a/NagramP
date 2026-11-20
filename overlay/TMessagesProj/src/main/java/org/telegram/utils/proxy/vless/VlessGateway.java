@@ -17,6 +17,7 @@ import java.net.InetAddress;
 import java.net.InetSocketAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
@@ -172,6 +173,19 @@ public final class VlessGateway {
                 handshakes.release();
             }
             socks5Reply(out, 0x00);
+            // Pull one chunk from the client so the VLESS header can ride along with it.
+            byte[] first = new byte[16 * 1024];
+            int firstLen;
+            try {
+                client.setSoTimeout(8000);
+                firstLen = in.read(first);
+            } finally {
+                client.setSoTimeout(0);
+            }
+            if (firstLen < 0) {
+                return;
+            }
+            tunnel.sendRequest(firstLen == 0 ? null : Arrays.copyOf(first, firstLen));
             pump(client, tunnel);
         } catch (IOException e) {
             FileLog.d("vless: tunnel failed: " + e.getMessage());

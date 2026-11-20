@@ -203,19 +203,39 @@ final class VlessTunnel implements Closeable {
     }
 
     /** Writes payload bytes to the peer. */
+    /**
+     * Sends the request header together with the first payload chunk.
+     *
+     * The remote only starts forwarding once both arrive in the same WebSocket message, so the
+     * gateway reads one chunk from the client before starting the pump.
+     */
+    void sendRequest(byte[] first) throws IOException {
+        if (requestHeaderSent) {
+            if (first != null && first.length > 0) {
+                write(first, 0, first.length);
+            }
+            return;
+        }
+        ByteArrayOutputStream combined = new ByteArrayOutputStream(64 + (first == null ? 0 : first.length));
+        if (requestHeader != null) {
+            combined.write(requestHeader, 0, requestHeader.length);
+            requestHeader = null;
+        }
+        if (first != null && first.length > 0) {
+            combined.write(first, 0, first.length);
+        }
+        requestHeaderSent = true;
+        sendFrame(0x2, combined.toByteArray());
+    }
+
     void write(byte[] data, int off, int len) throws IOException {
         if (closed) {
             throw new IOException("tunnel closed");
         }
         if (!requestHeaderSent) {
-            ByteArrayOutputStream combined = new ByteArrayOutputStream(64 + len);
-            if (requestHeader != null) {
-                combined.write(requestHeader, 0, requestHeader.length);
-                requestHeader = null;
-            }
-            combined.write(data, off, len);
-            requestHeaderSent = true;
-            sendFrame(0x2, combined.toByteArray());
+            byte[] copy = new byte[len];
+            System.arraycopy(data, off, copy, 0, len);
+            sendRequest(copy);
             return;
         }
         while (len > 0) {
@@ -231,12 +251,18 @@ final class VlessTunnel implements Closeable {
     /** Reads payload bytes; returns -1 once the peer closed the tunnel. */
     int read(byte[] dst) throws IOException {
         if (!requestHeaderSent) {
-            // Nothing to piggyback on; still send the header so the peer can open the stream.
-            requestHeaderSent = true;
-            byte[] header = requestHeader;
-            requestHeader = null;
-            if (header != null) {
-                sendFrame(0x2, header);
+            // Downstream started before upstream: wait for the gateway to supply the first chunk.
+            long deadline = System.currentTimeMillis() + 4000;
+            while (!requestHeaderSent && System.currentTimeMillis() < deadline) {
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    Thread.currentThread().interrupt();
+                    break;
+                }
+            }
+            if (!requestHeaderSent) {
+                sendRequest(null);
             }
         }
         while (true) {

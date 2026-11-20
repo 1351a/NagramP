@@ -37,12 +37,14 @@ public final class VlessGateway {
     public static final int DEFAULT_PORT = 10808;
 
     private static final String TAG = "NagramVLESS";
-    private static final int MAX_CONNECTIONS = 96;
+    private static final int MAX_CONNECTIONS = 32;
+    private static final int MAX_PARALLEL_HANDSHAKES = 3;
     private static final int REPLY_GENERAL_FAILURE = 0x01;
     private static final int REPLY_HOST_UNREACHABLE = 0x04;
     private static final int REPLY_COMMAND_UNSUPPORTED = 0x07;
 
     private final Semaphore slots = new Semaphore(MAX_CONNECTIONS);
+    private final Semaphore handshakes = new Semaphore(MAX_PARALLEL_HANDSHAKES);
     private final Set<Socket> activeSockets = Collections.newSetFromMap(new ConcurrentHashMap<Socket, Boolean>());
     private final ExecutorService pool = Executors.newCachedThreadPool(new ThreadFactory() {
         private final AtomicInteger counter = new AtomicInteger();
@@ -161,7 +163,14 @@ public final class VlessGateway {
                 socks5Reply(out, REPLY_GENERAL_FAILURE);
                 return;
             }
-            tunnel = VlessTunnel.open(current, request.host, request.port);
+            // Cap concurrent TLS/WS handshakes: tgnet opens many sockets at once and each
+            // handshake is CPU heavy, which starves the UI thread on slow devices.
+            handshakes.acquire();
+            try {
+                tunnel = VlessTunnel.open(current, request.host, request.port);
+            } finally {
+                handshakes.release();
+            }
             socks5Reply(out, 0x00);
             pump(client, tunnel);
         } catch (IOException e) {

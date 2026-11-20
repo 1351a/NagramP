@@ -751,6 +751,8 @@ public class ConnectionsManager extends BaseController {
             FileLog.d("selected ip strategy " + selectedStrategy);
         }
         native_setIpStrategy(currentAccount, selectedStrategy);
+        android.util.Log.d("NagramNet", "checkConnection acct=" + currentAccount + " online=" + ApplicationLoader.isNetworkOnline()
+                + " type=" + ApplicationLoader.getCurrentNetworkType() + " slow=" + ApplicationLoader.isConnectionSlow());
         native_setNetworkAvailable(currentAccount, ApplicationLoader.isNetworkOnline(), ApplicationLoader.getCurrentNetworkType(), ApplicationLoader.isConnectionSlow());
     }
 
@@ -805,6 +807,8 @@ public class ConnectionsManager extends BaseController {
             packageId = "";
         }
 
+        android.util.Log.d("NagramNet", "init acct=" + currentAccount + " cdnActive=" + SharedConfig.cdnProxyActive
+                + " cdnPort=" + SharedConfig.cdnProxyPort + " apiId=" + apiId + " online=" + ApplicationLoader.isNetworkOnline());
         native_init(currentAccount, version, layer, apiId, deviceModel, systemVersion, appVersion, langCode, systemLangCode, configPath, logPath, regId, cFingerprint, installer, packageId, timezoneOffset, userId, userPremium, enablePushConnection, ApplicationLoader.isNetworkOnline(), ApplicationLoader.getCurrentNetworkType(), SharedConfig.measureDevicePerformanceClass());
         checkConnection();
     }
@@ -1150,6 +1154,8 @@ public class ConnectionsManager extends BaseController {
             _secret = secret;
         }
 
+        android.util.Log.d("NagramNet", "setProxySettings enabled=" + enabled + " addr=" + address
+                + " port=" + port + " cdn=" + useCdn + " accounts=" + SharedConfig.activeAccounts);
         for (int a : SharedConfig.activeAccounts) {
             if (enabled && !TextUtils.isEmpty(address)) {
                 native_setProxySettings(a, address, port, username, password, secret);

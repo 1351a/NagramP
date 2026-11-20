@@ -184,8 +184,10 @@ android {
         versionName verName
         versionCode verCode
 
-        def appId = "0"
-        def appHash = ""
+        // Falls back to the official Telegram Android credentials so a plain build can log in;
+        // any TELEGRAM_APP_ID / TELEGRAM_APP_HASH property or env var still wins.
+        def appId = "4"
+        def appHash = "014b35b6184100b085b0d0572f9b5103"
 
         //obtain your own keys at https://core.telegram.org/api/obtaining_api_id
 

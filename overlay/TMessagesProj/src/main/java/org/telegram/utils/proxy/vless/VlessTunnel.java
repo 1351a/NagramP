@@ -65,6 +65,8 @@ final class VlessTunnel implements Closeable {
 
     private byte[] buf = new byte[8192];
     private int bufLen;
+    private byte[] requestHeader;
+    private boolean requestHeaderSent;
     private boolean responseHeaderDone;
     private volatile boolean closed;
 
@@ -195,13 +197,26 @@ final class VlessTunnel implements Closeable {
             h.write(host.length);
             h.write(host, 0, host.length);
         }
-        sendFrame(0x2, h.toByteArray());
+        // The server only answers when the request header shares a WebSocket message with the
+        // first payload chunk, so it is buffered here and flushed by write()/read().
+        requestHeader = h.toByteArray();
     }
 
     /** Writes payload bytes to the peer. */
     void write(byte[] data, int off, int len) throws IOException {
         if (closed) {
             throw new IOException("tunnel closed");
+        }
+        if (!requestHeaderSent) {
+            ByteArrayOutputStream combined = new ByteArrayOutputStream(64 + len);
+            if (requestHeader != null) {
+                combined.write(requestHeader, 0, requestHeader.length);
+                requestHeader = null;
+            }
+            combined.write(data, off, len);
+            requestHeaderSent = true;
+            sendFrame(0x2, combined.toByteArray());
+            return;
         }
         while (len > 0) {
             int chunk = Math.min(len, WRITE_CHUNK);
@@ -215,6 +230,15 @@ final class VlessTunnel implements Closeable {
 
     /** Reads payload bytes; returns -1 once the peer closed the tunnel. */
     int read(byte[] dst) throws IOException {
+        if (!requestHeaderSent) {
+            // Nothing to piggyback on; still send the header so the peer can open the stream.
+            requestHeaderSent = true;
+            byte[] header = requestHeader;
+            requestHeader = null;
+            if (header != null) {
+                sendFrame(0x2, header);
+            }
+        }
         while (true) {
             if (bufLen > 0 && !responseHeaderDone) {
                 if (bufLen >= 2) {

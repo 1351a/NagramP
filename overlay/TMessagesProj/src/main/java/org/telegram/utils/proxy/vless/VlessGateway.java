@@ -152,9 +152,14 @@ public final class VlessGateway {
         VlessTunnel tunnel = null;
         try {
             client.setTcpNoDelay(true);
+            Log.d(TAG, "accept from " + client.getInetAddress() + ":" + client.getPort());
+            // A peer that connects and never speaks must not pin a handler slot forever.
+            client.setSoTimeout(15000);
             InputStream in = client.getInputStream();
             OutputStream out = client.getOutputStream();
             Socks5Request request = socks5Handshake(in, out);
+            Log.d(TAG, "socks5 request=" + (request == null ? "null"
+                    : request.host + ":" + request.port));
             if (request == null) {
                 return;
             }
@@ -172,6 +177,8 @@ public final class VlessGateway {
                 handshakes.release();
             }
             socks5Reply(out, 0x00);
+            client.setSoTimeout(0);
+            Log.d(TAG, "tunnel ready, starting pump for " + request.host + ":" + request.port);
             pump(client, tunnel);
         } catch (IOException e) {
             FileLog.d("vless: tunnel failed: " + e.getMessage());
@@ -201,6 +208,7 @@ public final class VlessGateway {
 
     private Socks5Request socks5Handshake(InputStream in, OutputStream out) throws IOException {
         int version = in.read();
+        Log.d(TAG, "socks5 ver=" + version);
         if (version != 5) {
             return null;
         }
@@ -224,6 +232,7 @@ public final class VlessGateway {
         }
         out.write(new byte[]{5, 0});
         out.flush();
+        Log.d(TAG, "socks5 method reply sent");
 
         int ver = in.read();
         int cmd = in.read();

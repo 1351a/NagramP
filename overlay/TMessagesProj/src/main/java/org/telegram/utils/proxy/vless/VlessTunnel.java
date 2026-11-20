@@ -62,6 +62,7 @@ final class VlessTunnel implements Closeable {
     private final InputStream netIn;
     private final OutputStream netOut;
     private final Object writeLock = new Object();
+    private final Object headerLock = new Object();
 
     private byte[] buf = new byte[8192];
     private int bufLen;
@@ -210,22 +211,27 @@ final class VlessTunnel implements Closeable {
      * gateway reads one chunk from the client before starting the pump.
      */
     void sendRequest(byte[] first) throws IOException {
-        if (requestHeaderSent) {
-            if (first != null && first.length > 0) {
-                write(first, 0, first.length);
+        byte[] frame;
+        synchronized (headerLock) {
+            if (requestHeaderSent) {
+                if (first != null && first.length > 0) {
+                    write(first, 0, first.length);
+                }
+                return;
             }
-            return;
+            ByteArrayOutputStream combined = new ByteArrayOutputStream(64 + (first == null ? 0 : first.length));
+            if (requestHeader != null) {
+                combined.write(requestHeader, 0, requestHeader.length);
+                requestHeader = null;
+            }
+            if (first != null && first.length > 0) {
+                combined.write(first, 0, first.length);
+            }
+            requestHeaderSent = true;
+            frame = combined.toByteArray();
+            headerLock.notifyAll();
         }
-        ByteArrayOutputStream combined = new ByteArrayOutputStream(64 + (first == null ? 0 : first.length));
-        if (requestHeader != null) {
-            combined.write(requestHeader, 0, requestHeader.length);
-            requestHeader = null;
-        }
-        if (first != null && first.length > 0) {
-            combined.write(first, 0, first.length);
-        }
-        requestHeaderSent = true;
-        sendFrame(0x2, combined.toByteArray());
+        sendFrame(0x2, frame);
     }
 
     void write(byte[] data, int off, int len) throws IOException {
@@ -251,18 +257,20 @@ final class VlessTunnel implements Closeable {
     /** Reads payload bytes; returns -1 once the peer closed the tunnel. */
     int read(byte[] dst) throws IOException {
         if (!requestHeaderSent) {
-            // Downstream started before upstream: wait for the gateway to supply the first chunk.
-            long deadline = System.currentTimeMillis() + 4000;
-            while (!requestHeaderSent && System.currentTimeMillis() < deadline) {
-                try {
-                    Thread.sleep(10);
-                } catch (InterruptedException e) {
-                    Thread.currentThread().interrupt();
-                    break;
+            // Wait for the upstream pump to deliver the first chunk; sending a header-only
+            // frame makes the peer open the stream but never answer, so we never do that.
+            synchronized (headerLock) {
+                while (!requestHeaderSent && !closed) {
+                    try {
+                        headerLock.wait(1000);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                        break;
+                    }
                 }
             }
-            if (!requestHeaderSent) {
-                sendRequest(null);
+            if (closed) {
+                return -1;
             }
         }
         while (true) {

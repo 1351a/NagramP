@@ -46,6 +46,7 @@ final class VlessTunnel implements Closeable {
     private static final String TAG = "NagramVLESS";
     private static final int CONNECT_TIMEOUT_MS = 10000;
     private static final int MAX_CONNECT_ADDRESSES = 3;
+    private static final int IDLE_READ_TIMEOUT_MS = 300000;
     private static final int WRITE_CHUNK = 32 * 1024;
     private static final int MAX_MESSAGE = 4 * 1024 * 1024;
     private static final int MAX_HANDSHAKE_HEAD = 8192;
@@ -118,7 +119,9 @@ final class VlessTunnel implements Closeable {
             VlessTunnel tunnel = new VlessTunnel(profile, plain, transport);
             tunnel.wsHandshake();
             tunnel.writeVlessHeader(dstHost, dstPort);
-            transport.setSoTimeout(0);
+            // Never block forever: a peer that half-closes mid-frame would otherwise pin this
+            // tunnel (and the handler thread) until the process dies.
+            transport.setSoTimeout(IDLE_READ_TIMEOUT_MS);
             return tunnel;
         } catch (IOException e) {
             closeQuietly(plain);
@@ -352,6 +355,9 @@ final class VlessTunnel implements Closeable {
                 for (int i = 0; i < data.length; i++) {
                     data[i] ^= mask[i & 3];
                 }
+            }
+            if (opcode != 0x2 && opcode != 0x0) {
+                Log.d(TAG, "ws frame opcode=" + opcode + " len=" + len);
             }
             if (opcode == 0x8) {
                 Log.d(TAG, "ws close frame from peer");

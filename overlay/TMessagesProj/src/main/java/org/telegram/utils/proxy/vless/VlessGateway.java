@@ -297,12 +297,19 @@ public final class VlessGateway {
                     sent += n;
                 }
                 Log.d(TAG, "pump up: client EOF after " + sent + " bytes");
+                // Half-close only: the server may still have a reply in flight, so the
+                // downstream pump stays alive until the tunnel itself ends.
+                try {
+                    client.shutdownOutput();
+                } catch (IOException ignore) {
+                }
+                return;
             } catch (IOException e) {
                 Log.d(TAG, "pump up: " + e + " after " + sent + " bytes");
-            } finally {
-                tunnel.close();
-                closeQuietly(client);
             }
+            // Real failure: tear the tunnel down so the downstream read unblocks.
+            tunnel.close();
+            closeQuietly(client);
         }, "vless-gw-up");
         up.setDaemon(true);
         up.start();
